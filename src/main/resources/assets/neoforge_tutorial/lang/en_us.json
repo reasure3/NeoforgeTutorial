@@ -2,6 +2,14 @@
   "item.neoforge_tutorial.black_opal": "Black Opal",
   "item.neoforge_tutorial.raw_black_opal": "Raw Black Opal",
 
+  "block.neoforge_tutorial.black_opal_block": "Block of Black Opal",
+  "block.neoforge_tutorial.raw_black_opal_block": "Block of Raw Black Opal",
+
+  "block.neoforge_tutorial.black_opal_ore": "Black Opal Ore",
+  "block.neoforge_tutorial.black_opal_deepslate_ore": "Black Opal Deepslate Ore",
+  "block.neoforge_tutorial.black_opal_end_ore": "Black Opal End Ore",
+  "block.neoforge_tutorial.black_opal_nether_ore": "Black Opal Nether Ore",
+
 
 
   "itemGroup.neoforge_tutorial.black_opal_items_tab": "Black Opal Items",
