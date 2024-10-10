@@ -85,6 +85,9 @@ public class NeoforgeTutorial {
             event.accept(ModBlocks.BLACK_OPAL_END_ORE);
             event.accept(ModBlocks.BLACK_OPAL_NETHER_ORE);
         }
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(ModBlocks.MAGIC_BLOCK);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
