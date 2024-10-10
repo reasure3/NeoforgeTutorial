@@ -24,6 +24,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.RAW_BLACK_OPAL);
 
                         output.accept(ModItems.CHAINSAW);
+                        output.accept(ModItems.TOMATO);
                     }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =
