@@ -1,10 +1,10 @@
 package com.reasure.neoforge_tutorial.item.custom;
 
+import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -26,7 +26,7 @@ public class ChainsawItem extends Item {
     public @NotNull InteractionResult useOn(@NotNull UseOnContext context) {
         Level level = context.getLevel();
 
-        if (level.getBlockState(context.getClickedPos()).is(BlockTags.LOGS)) {
+        if (level.getBlockState(context.getClickedPos()).is(ModTags.Blocks.CHAINSAW_CUTABLE_BLOCKS)) {
             if (!level.isClientSide()) {
                 level.destroyBlock(context.getClickedPos(), true, context.getPlayer());
 
