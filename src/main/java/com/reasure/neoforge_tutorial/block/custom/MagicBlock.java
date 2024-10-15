@@ -1,6 +1,5 @@
 package com.reasure.neoforge_tutorial.block.custom;
 
-import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

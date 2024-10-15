@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_opal_nether_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "neoforge_tutorial:black_opal_nether_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "neoforge_tutorial:black_opal_from_smelting_black_opal_nether_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_black_opal_nether_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "neoforge_tutorial:black_opal_from_smelting_black_opal_nether_ore"
+    ]
+  }
+}
