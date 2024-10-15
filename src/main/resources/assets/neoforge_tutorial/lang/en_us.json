@@ -16,6 +16,13 @@
   "block.neoforge_tutorial.magic_block": "Magic Block",
 
 
+  "tooltip.neoforge_tutorial.chainsaw.tooltip.shift": "Press §eShift§r for more Information!",
+  "tooltip.neoforge_tutorial.chainsaw.tooltip.1": "This chainsaw is awesome and will cut down trees!",
+  "tooltip.neoforge_tutorial.chainsaw.tooltip.2": "§oChainsaw go vroom!§r",
+
+  "tooltip.neoforge_tutorial.magic_block.tooltip.1": "This Block is §9MAGICAL§r",
+  "tooltip.neoforge_tutorial.tomato.1": "Tomato; Tomato",
+
   "itemGroup.neoforge_tutorial.black_opal_items_tab": "Black Opal Items",
   "itemGroup.neoforge_tutorial.black_opal_blocks_tab": "Black Opal Blocks"
 }
