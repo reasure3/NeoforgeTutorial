@@ -24,6 +24,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.BLACK_OPAL_BLOCK.get())
                 .add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get())
+                .add(ModBlocks.BLACK_OPAL_STAIRS.get())
+                .add(ModBlocks.BLACK_OPAL_SLAB.get())
                 .add(ModBlocks.BLACK_OPAL_ORE.get())
                 .add(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE.get())
                 .add(ModBlocks.BLACK_OPAL_END_ORE.get())

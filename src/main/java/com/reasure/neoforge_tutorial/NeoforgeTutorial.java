@@ -78,6 +78,8 @@ public class NeoforgeTutorial {
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.BLACK_OPAL_STAIRS);
+            event.accept(ModBlocks.BLACK_OPAL_SLAB);
         }
 
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {

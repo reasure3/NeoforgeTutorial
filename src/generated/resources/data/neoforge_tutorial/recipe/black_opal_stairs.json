@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "black_opal",
+  "key": {
+    "#": {
+      "item": "neoforge_tutorial:black_opal"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "neoforge_tutorial:black_opal_stairs"
+  }
+}

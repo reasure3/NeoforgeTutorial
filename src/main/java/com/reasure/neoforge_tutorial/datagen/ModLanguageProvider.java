@@ -22,6 +22,9 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
+        add(ModBlocks.BLACK_OPAL_STAIRS.get(), "Black Opal Stairs");
+        add(ModBlocks.BLACK_OPAL_SLAB.get(), "Black Opal Slab");
+
         add(ModBlocks.BLACK_OPAL_ORE.get(), "Black Opal Ore");
         add(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE.get(), "Black Opal Deepslate Ore");
         add(ModBlocks.BLACK_OPAL_END_ORE.get(), "Black Opal End Ore");

@@ -1,5 +1,5 @@
-// 1.21.1	2024-10-15T17:09:23.9392188	Tags for minecraft:block mod id neoforge_tutorial
-23aca21cf3451cd9893429381b0532239134cbd5 data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21.1	2024-10-17T11:26:28.2240623	Tags for minecraft:block mod id neoforge_tutorial
+cd1b384d33e6726f79992dd84ff4c9c8d1b2da11 data/minecraft/tags/block/mineable/pickaxe.json
 4a561134a9c9a573527c5fd9638634802e68d1d4 data/minecraft/tags/block/needs_diamond_tool.json
 1e2c132ba9bcfcf1df437d20f638136806b292a8 data/minecraft/tags/block/needs_iron_tool.json
 b9a4f84d06ac3607d849d0375ee46aab3aa1ba1f data/neoforge_tutorial/tags/block/chainsaw_cutable_blocks.json

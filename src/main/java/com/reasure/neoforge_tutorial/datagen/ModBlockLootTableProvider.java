@@ -30,19 +30,22 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.BLACK_OPAL_BLOCK.get());
         dropSelf(ModBlocks.RAW_BLACK_OPAL_BLOCK.get());
 
-        this.add(ModBlocks.BLACK_OPAL_ORE.get(),
+        dropSelf(ModBlocks.BLACK_OPAL_STAIRS.get());
+        add(ModBlocks.BLACK_OPAL_SLAB.get(), this::createSlabItemTable);
+
+        add(ModBlocks.BLACK_OPAL_ORE.get(),
                 block -> createOreDrop(block, ModItems.RAW_BLACK_OPAL.get()));
-        this.add(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE.get(),
+        add(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE.get(),
                 block -> createMultipleOreDrops(block, ModItems.RAW_BLACK_OPAL.get(), 2, 5));
-        this.add(ModBlocks.BLACK_OPAL_END_ORE.get(),
+        add(ModBlocks.BLACK_OPAL_END_ORE.get(),
                 block -> createMultipleOreDrops(block, ModItems.RAW_BLACK_OPAL.get(), 4, 7));
-        this.add(ModBlocks.BLACK_OPAL_NETHER_ORE.get(),
+        add(ModBlocks.BLACK_OPAL_NETHER_ORE.get(),
                 block -> createMultipleOreDrops(block, ModItems.RAW_BLACK_OPAL.get(), 3, 9));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> registryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return this.createSilkTouchDispatchTable(block, this.applyExplosionDecay(block,
+        return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block,
                         LootItem.lootTableItem(item)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
                                 .apply(ApplyBonusCount.addOreBonusCount(registryLookup.getOrThrow(Enchantments.FORTUNE)))
