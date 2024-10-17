@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "neoforge_tutorial:block/black_opal_block"
+  }
+}

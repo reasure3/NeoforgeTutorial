@@ -28,6 +28,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.BLACK_OPAL_SLAB.get())
                 .add(ModBlocks.BLACK_OPAL_PRESSURE_PLATE.get())
                 .add(ModBlocks.BLACK_OPAL_BUTTON.get())
+                .add(ModBlocks.BLACK_OPAL_FENCE.get())
+                .add(ModBlocks.BLACK_OPAL_FENCE_GATE.get())
+                .add(ModBlocks.BLACK_OPAL_WALL.get())
                 .add(ModBlocks.BLACK_OPAL_ORE.get())
                 .add(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE.get())
                 .add(ModBlocks.BLACK_OPAL_END_ORE.get())
@@ -46,5 +49,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTag(BlockTags.LOGS)
                 .addTag(BlockTags.LEAVES)
                 .add(Blocks.MANGROVE_DOOR);
+
+        tag(BlockTags.FENCES).add(ModBlocks.BLACK_OPAL_FENCE.get());
+        tag(BlockTags.FENCE_GATES).add(ModBlocks.BLACK_OPAL_FENCE_GATE.get());
+        tag(BlockTags.WALLS).add(ModBlocks.BLACK_OPAL_WALL.get());
     }
 }

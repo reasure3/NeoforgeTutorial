@@ -31,6 +31,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockItem(ModBlocks.BLACK_OPAL_PRESSURE_PLATE);
 
+        fence(ModBlocks.BLACK_OPAL_FENCE, ModBlocks.BLACK_OPAL_BLOCK);
+        fenceGateBlock((FenceGateBlock) ModBlocks.BLACK_OPAL_FENCE_GATE.get(), blockTexture(ModBlocks.BLACK_OPAL_BLOCK.get()));
+        wall(ModBlocks.BLACK_OPAL_WALL, ModBlocks.BLACK_OPAL_BLOCK);
+
+        blockItem(ModBlocks.BLACK_OPAL_FENCE_GATE);
+
         blockWithItem(ModBlocks.BLACK_OPAL_ORE);
         blockWithItem(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE);
         blockWithItem(ModBlocks.BLACK_OPAL_END_ORE);
@@ -49,8 +55,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     public void button(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
         buttonBlock((ButtonBlock) block.get(), blockTexture(baseBlock.get()));
-        itemModels().withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
-                .texture("texture", ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID,
+        blockParentItem(block, baseBlock, "texture", "button_inventory");
+    }
+
+    public void fence(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        fenceBlock((FenceBlock) block.get(), blockTexture(baseBlock.get()));
+        blockParentItem(block, baseBlock, "texture", "fence_inventory");
+    }
+
+    public void wall(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        wallBlock((WallBlock) block.get(), blockTexture(baseBlock.get()));
+        blockParentItem(block, baseBlock, "wall", "wall_inventory");
+    }
+
+    public void blockParentItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock, String key, String type) {
+        itemModels().withExistingParent(block.getId().getPath(), mcLoc("block/" + type))
+                .texture(key, ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID,
                         "block/" + baseBlock.getId().getPath()));
     }
 }

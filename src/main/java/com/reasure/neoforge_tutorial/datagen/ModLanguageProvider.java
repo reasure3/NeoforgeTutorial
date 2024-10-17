@@ -28,6 +28,10 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.BLACK_OPAL_PRESSURE_PLATE.get(), "Black Opal Pressure Plate");
         add(ModBlocks.BLACK_OPAL_BUTTON.get(), "Black Opal Button");
 
+        add(ModBlocks.BLACK_OPAL_FENCE.get(), "Black Opal Fence");
+        add(ModBlocks.BLACK_OPAL_FENCE_GATE.get(), "Black Opal Fence Gate");
+        add(ModBlocks.BLACK_OPAL_WALL.get(), "Black Opal Wall");
+
         add(ModBlocks.BLACK_OPAL_ORE.get(), "Black Opal Ore");
         add(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE.get(), "Black Opal Deepslate Ore");
         add(ModBlocks.BLACK_OPAL_END_ORE.get(), "Black Opal End Ore");

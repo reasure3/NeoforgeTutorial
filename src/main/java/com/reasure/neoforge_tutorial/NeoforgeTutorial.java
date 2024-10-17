@@ -82,6 +82,9 @@ public class NeoforgeTutorial {
             event.accept(ModBlocks.BLACK_OPAL_SLAB);
             event.accept(ModBlocks.BLACK_OPAL_PRESSURE_PLATE);
             event.accept(ModBlocks.BLACK_OPAL_BUTTON);
+            event.accept(ModBlocks.BLACK_OPAL_FENCE);
+            event.accept(ModBlocks.BLACK_OPAL_FENCE_GATE);
+            event.accept(ModBlocks.BLACK_OPAL_WALL);
         }
 
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {

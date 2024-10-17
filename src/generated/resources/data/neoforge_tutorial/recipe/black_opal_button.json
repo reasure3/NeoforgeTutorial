@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "black_opal",
+  "ingredients": [
+    {
+      "item": "neoforge_tutorial:black_opal"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "neoforge_tutorial:black_opal_button"
+  }
+}
