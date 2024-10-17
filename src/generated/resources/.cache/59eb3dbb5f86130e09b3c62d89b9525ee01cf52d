@@ -1,9 +1,11 @@
-// 1.21.1	2024-10-17T11:26:28.2210418	Loot Tables
+// 1.21.1	2024-10-17T13:45:55.3700932	Loot Tables
 7e943b5a59e8ce9852d8f8c6ce9bae66fb0c74a9 data/neoforge_tutorial/loot_table/blocks/black_opal_block.json
+22e07db84d9a4f603a956e0b4628cd21341c33b0 data/neoforge_tutorial/loot_table/blocks/black_opal_button.json
 6cb744458d148ebe68eee0ef606ca0d5b4091bfc data/neoforge_tutorial/loot_table/blocks/black_opal_deepslate_ore.json
 276e82dcb79c70807fbe46fe171d78f0370bb36d data/neoforge_tutorial/loot_table/blocks/black_opal_end_ore.json
 2548f97c44d9c1d8dca0555e32b45d14b7cb116a data/neoforge_tutorial/loot_table/blocks/black_opal_nether_ore.json
 a857586ab2577fa1f7f9596b9e72cbc0e4423722 data/neoforge_tutorial/loot_table/blocks/black_opal_ore.json
+f700924bcff2da182144fb2613fb7a5f118d2398 data/neoforge_tutorial/loot_table/blocks/black_opal_pressure_plate.json
 d572e4778f5ab64762617270b369a25197cb8960 data/neoforge_tutorial/loot_table/blocks/black_opal_slab.json
 26c13716662cf5fc4725c4004dac3b5b44e20160 data/neoforge_tutorial/loot_table/blocks/black_opal_stairs.json
 bc0db8c9f24bfc2ce2456fa3ec98ee6c7cac78eb data/neoforge_tutorial/loot_table/blocks/raw_black_opal_block.json

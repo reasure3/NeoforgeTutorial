@@ -40,6 +40,9 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.BLACK_OPAL_STAIRS);
                         output.accept(ModBlocks.BLACK_OPAL_SLAB);
 
+                        output.accept(ModBlocks.BLACK_OPAL_PRESSURE_PLATE);
+                        output.accept(ModBlocks.BLACK_OPAL_BUTTON);
+
                         output.accept(ModBlocks.BLACK_OPAL_ORE);
                         output.accept(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE);
                         output.accept(ModBlocks.BLACK_OPAL_END_ORE);
