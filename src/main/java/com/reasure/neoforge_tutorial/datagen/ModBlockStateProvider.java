@@ -3,7 +3,6 @@ package com.reasure.neoforge_tutorial.datagen;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -20,22 +19,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.BLACK_OPAL_BLOCK);
         blockWithItem(ModBlocks.RAW_BLACK_OPAL_BLOCK);
 
-        stairsBlock((StairBlock) ModBlocks.BLACK_OPAL_STAIRS.get(), blockTexture(ModBlocks.BLACK_OPAL_BLOCK.get()));
-        slabBlock((SlabBlock) ModBlocks.BLACK_OPAL_SLAB.get(), blockTexture(ModBlocks.BLACK_OPAL_BLOCK.get()), blockTexture(ModBlocks.BLACK_OPAL_BLOCK.get()));
+        stairs(ModBlocks.BLACK_OPAL_STAIRS, ModBlocks.BLACK_OPAL_BLOCK);
+        slab(ModBlocks.BLACK_OPAL_SLAB, ModBlocks.BLACK_OPAL_BLOCK);
 
-        blockItem(ModBlocks.BLACK_OPAL_STAIRS);
-        blockItem(ModBlocks.BLACK_OPAL_SLAB);
-
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.BLACK_OPAL_PRESSURE_PLATE.get(), blockTexture(ModBlocks.BLACK_OPAL_BLOCK.get()));
+        pressurePlate(ModBlocks.BLACK_OPAL_PRESSURE_PLATE, ModBlocks.BLACK_OPAL_BLOCK);
         button(ModBlocks.BLACK_OPAL_BUTTON, ModBlocks.BLACK_OPAL_BLOCK);
 
         blockItem(ModBlocks.BLACK_OPAL_PRESSURE_PLATE);
 
         fence(ModBlocks.BLACK_OPAL_FENCE, ModBlocks.BLACK_OPAL_BLOCK);
-        fenceGateBlock((FenceGateBlock) ModBlocks.BLACK_OPAL_FENCE_GATE.get(), blockTexture(ModBlocks.BLACK_OPAL_BLOCK.get()));
+        fenceGate(ModBlocks.BLACK_OPAL_FENCE_GATE, ModBlocks.BLACK_OPAL_BLOCK);
         wall(ModBlocks.BLACK_OPAL_WALL, ModBlocks.BLACK_OPAL_BLOCK);
 
-        blockItem(ModBlocks.BLACK_OPAL_FENCE_GATE);
+        door(ModBlocks.BLACK_OPAL_DOOR);
+        trapDoor(ModBlocks.BLACK_OPAL_TRAPDOOR);
 
         blockWithItem(ModBlocks.BLACK_OPAL_ORE);
         blockWithItem(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE);
@@ -50,7 +47,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void blockItem(DeferredBlock<Block> deferredBlock) {
-        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile(NeoforgeTutorial.MODID + ":block/" + deferredBlock.getId().getPath()));
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile(blockTexture(deferredBlock.get())));
+    }
+
+    private void blockItem(DeferredBlock<Block> deferredBlock, String suffix) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile(blockTexture(deferredBlock.get()).withSuffix(suffix)));
+    }
+
+    public void stairs(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        stairsBlock((StairBlock) block.get(), blockTexture(baseBlock.get()));
+        blockItem(block);
+    }
+
+    public void slab(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        slabBlock((SlabBlock) block.get(), blockTexture(baseBlock.get()), blockTexture(baseBlock.get()));
+        blockItem(block);
+    }
+
+    public void pressurePlate(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        pressurePlateBlock((PressurePlateBlock) block.get(), blockTexture(baseBlock.get()));
+        blockItem(block);
     }
 
     public void button(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
@@ -63,14 +79,31 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockParentItem(block, baseBlock, "texture", "fence_inventory");
     }
 
+    public void fenceGate(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        fenceGateBlock((FenceGateBlock) block.get(), blockTexture(baseBlock.get()));
+        blockItem(block);
+    }
+
     public void wall(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
         wallBlock((WallBlock) block.get(), blockTexture(baseBlock.get()));
         blockParentItem(block, baseBlock, "wall", "wall_inventory");
     }
 
+    public void door(DeferredBlock<Block> block) {
+        doorBlockWithRenderType((DoorBlock) block.get(),
+                blockTexture(block.get()).withSuffix("_bottom"),
+                blockTexture(block.get()).withSuffix("_top"),
+                "cutout");
+        itemModels().basicItem(block.asItem());
+    }
+
+    public void trapDoor(DeferredBlock<Block> block) {
+        trapdoorBlockWithRenderType((TrapDoorBlock) block.get(), blockTexture(block.get()), true, "cutout");
+        blockItem(block, "_bottom");
+    }
+
     public void blockParentItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock, String key, String type) {
         itemModels().withExistingParent(block.getId().getPath(), mcLoc("block/" + type))
-                .texture(key, ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID,
-                        "block/" + baseBlock.getId().getPath()));
+                .texture(key, blockTexture(baseBlock.get()));
     }
 }

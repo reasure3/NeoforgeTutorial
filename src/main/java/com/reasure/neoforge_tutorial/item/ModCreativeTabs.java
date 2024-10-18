@@ -47,6 +47,9 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.BLACK_OPAL_FENCE_GATE);
                         output.accept(ModBlocks.BLACK_OPAL_WALL);
 
+                        output.accept(ModBlocks.BLACK_OPAL_DOOR);
+                        output.accept(ModBlocks.BLACK_OPAL_TRAPDOOR);
+
                         output.accept(ModBlocks.BLACK_OPAL_ORE);
                         output.accept(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE);
                         output.accept(ModBlocks.BLACK_OPAL_END_ORE);
