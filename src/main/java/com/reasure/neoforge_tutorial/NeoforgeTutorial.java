@@ -74,6 +74,7 @@ public class NeoforgeTutorial {
             event.accept(ModItems.BLACK_OPAL_SHOVEL);
             event.accept(ModItems.BLACK_OPAL_AXE);
             event.accept(ModItems.BLACK_OPAL_HOE);
+            event.accept(ModItems.BLACK_OPAL_PAXEL);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.TOMATO);

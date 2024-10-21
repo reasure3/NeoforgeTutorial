@@ -14,6 +14,8 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_BLACK_OPAL_TOOL = createTag("incorrect_for_black_opal_tool");
         public static final TagKey<Block> NEEDS_BLACK_OPAL_TOOL = createTag("needs_black_opal_tool");
 
+        public static final TagKey<Block> MINEABLE_WITH_PAXEL = createTag("mineable/paxel");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, name));
         }

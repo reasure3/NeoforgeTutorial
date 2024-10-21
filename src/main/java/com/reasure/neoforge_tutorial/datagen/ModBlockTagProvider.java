@@ -52,6 +52,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .remove(ModTags.Blocks.NEEDS_BLACK_OPAL_TOOL);
 
+        tag(ModTags.Blocks.MINEABLE_WITH_PAXEL)
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .addTag(BlockTags.MINEABLE_WITH_HOE);
+
         tag(ModTags.Blocks.CHAINSAW_CUTABLE_BLOCKS)
                 .addTag(BlockTags.LOGS)
                 .addTag(BlockTags.LEAVES)
