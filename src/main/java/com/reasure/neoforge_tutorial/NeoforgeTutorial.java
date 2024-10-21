@@ -65,8 +65,15 @@ public class NeoforgeTutorial {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.BLACK_OPAL_SWORD);
+        }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.CHAINSAW);
+            event.accept(ModItems.BLACK_OPAL_PICKAXE);
+            event.accept(ModItems.BLACK_OPAL_SHOVEL);
+            event.accept(ModItems.BLACK_OPAL_AXE);
+            event.accept(ModItems.BLACK_OPAL_HOE);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.TOMATO);

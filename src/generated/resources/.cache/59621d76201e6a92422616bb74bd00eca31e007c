@@ -1,5 +1,10 @@
-// 1.21.1	2024-10-15T17:09:23.9412193	Item Models: neoforge_tutorial
+// 1.21.1	2024-10-21T19:14:06.6961247	Item Models: neoforge_tutorial
 e1f584b1a1f4d834972ce540e10f9893886aa244 assets/neoforge_tutorial/models/item/black_opal.json
+83b5a73da0a934c74c4af1ba13ea539858878eee assets/neoforge_tutorial/models/item/black_opal_axe.json
+821f9e90a1eb3595ca1cb7a5df08b281c0aff14b assets/neoforge_tutorial/models/item/black_opal_hoe.json
+88755701d87c0de8f5fad4a7d0da03b8cfd2dc1b assets/neoforge_tutorial/models/item/black_opal_pickaxe.json
+c71cf426f8546113409b50e16bf2613babb4d52f assets/neoforge_tutorial/models/item/black_opal_shovel.json
+988d0073e34997f4a1dc1b6fc59d84f73b4635cf assets/neoforge_tutorial/models/item/black_opal_sword.json
 6732a652782452a8151718a71b5ed056ca001c79 assets/neoforge_tutorial/models/item/chainsaw.json
 a0304a77465b2f81ca94acf1d367e38d22567d93 assets/neoforge_tutorial/models/item/frostfire_ice.json
 163f4fac6895e3961a676971569574047c6ca0b7 assets/neoforge_tutorial/models/item/raw_black_opal.json

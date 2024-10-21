@@ -11,6 +11,8 @@ import net.minecraft.world.level.block.Block;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> CHAINSAW_CUTABLE_BLOCKS = createTag("chainsaw_cutable_blocks");
+        public static final TagKey<Block> INCORRECT_FOR_BLACK_OPAL_TOOL = createTag("incorrect_for_black_opal_tool");
+        public static final TagKey<Block> NEEDS_BLACK_OPAL_TOOL = createTag("needs_black_opal_tool");
 
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, name));

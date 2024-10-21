@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "#neoforge_tutorial:needs_black_opal_tool"
+  ],
+  "values": [
+    "#minecraft:incorrect_for_iron_tool"
+  ]
+}

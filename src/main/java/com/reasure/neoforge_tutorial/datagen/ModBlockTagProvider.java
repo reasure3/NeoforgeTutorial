@@ -45,6 +45,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.BLACK_OPAL_END_ORE.get())
                 .add(ModBlocks.BLACK_OPAL_NETHER_ORE.get());
 
+        // 철이랑 동급
+        tag(ModTags.Blocks.NEEDS_BLACK_OPAL_TOOL)
+                .addTag(BlockTags.NEEDS_IRON_TOOL);
+        tag(ModTags.Blocks.INCORRECT_FOR_BLACK_OPAL_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .remove(ModTags.Blocks.NEEDS_BLACK_OPAL_TOOL);
+
         tag(ModTags.Blocks.CHAINSAW_CUTABLE_BLOCKS)
                 .addTag(BlockTags.LOGS)
                 .addTag(BlockTags.LEAVES)

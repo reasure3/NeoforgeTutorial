@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
@@ -62,6 +63,47 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         oreSmelting(recipeOutput, BLACK_OPAL_SMELTABLES, RecipeCategory.MISC, ModItems.BLACK_OPAL.get(), 0.25f, 200, "black_opal");
         oreBlasting(recipeOutput, BLACK_OPAL_SMELTABLES, RecipeCategory.MISC, ModItems.BLACK_OPAL.get(), 0.25f, 100, "black_opal");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.BLACK_OPAL_SWORD.get())
+                .pattern("X")
+                .pattern("X")
+                .pattern("#")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .define('#', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.BLACK_OPAL_PICKAXE.get())
+                .pattern("XXX")
+                .pattern(" # ")
+                .pattern(" # ")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .define('#', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.BLACK_OPAL_SHOVEL.get())
+                .pattern("X")
+                .pattern("#")
+                .pattern("#")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .define('#', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.BLACK_OPAL_AXE.get())
+                .pattern("XX")
+                .pattern("X#")
+                .pattern(" #")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .define('#', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.BLACK_OPAL_HOE.get())
+                .pattern("XX")
+                .pattern(" #")
+                .pattern(" #")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .define('#', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
     }
 
     protected static void oreSmelting(@NotNull RecipeOutput recipeOutput, List<ItemLike> ingredients, @NotNull RecipeCategory category, @NotNull ItemLike result,

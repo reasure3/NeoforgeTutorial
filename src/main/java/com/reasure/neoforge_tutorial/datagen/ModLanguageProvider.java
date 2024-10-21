@@ -19,6 +19,12 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.TOMATO.get(), "Tomato");
         add(ModItems.FROSTFIRE_ICE.get(), "Frostfire Ice");
 
+        add(ModItems.BLACK_OPAL_SWORD.get(), "Black Opal Sword");
+        add(ModItems.BLACK_OPAL_PICKAXE.get(), "Black Opal Pickaxe");
+        add(ModItems.BLACK_OPAL_SHOVEL.get(), "Black Opal Shovel");
+        add(ModItems.BLACK_OPAL_AXE.get(), "Black Opal Axe");
+        add(ModItems.BLACK_OPAL_HOE.get(), "Black Opal Hoe");
+
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
@@ -38,7 +44,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.BLACK_OPAL_ORE.get(), "Black Opal Ore");
         add(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE.get(), "Black Opal Deepslate Ore");
         add(ModBlocks.BLACK_OPAL_END_ORE.get(), "Black Opal End Ore");
-        add(ModBlocks.BLACK_OPAL_NETHER_ORE.get(), "Black Opal Nether ORe");
+        add(ModBlocks.BLACK_OPAL_NETHER_ORE.get(), "Black Opal Nether Ore");
 
         add(ModBlocks.MAGIC_BLOCK.get(), "Magic Block");
 

@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-17T14:20:02.5496476	Tags for minecraft:block mod id neoforge_tutorial
+// 1.21.1	2024-10-21T18:21:32.9750295	Tags for minecraft:block mod id neoforge_tutorial
 5a42c7a91f05afa78e9c3579497482cb241ca2cb data/minecraft/tags/block/fences.json
 f2ef2ea571fd52f903fd3eca395369e84958f43c data/minecraft/tags/block/fence_gates.json
 9dd00db9b18ad9ee93af4aa7a93d9f91bcba6207 data/minecraft/tags/block/mineable/pickaxe.json
@@ -6,3 +6,5 @@ f2ef2ea571fd52f903fd3eca395369e84958f43c data/minecraft/tags/block/fence_gates.j
 1e2c132ba9bcfcf1df437d20f638136806b292a8 data/minecraft/tags/block/needs_iron_tool.json
 10f051ffbcb570c33509c6a3b87e78b1e5258979 data/minecraft/tags/block/walls.json
 b9a4f84d06ac3607d849d0375ee46aab3aa1ba1f data/neoforge_tutorial/tags/block/chainsaw_cutable_blocks.json
+b3e3df1d606d9c7b0196a52785648962af10b0a6 data/neoforge_tutorial/tags/block/incorrect_for_black_opal_tool.json
+32b13946c4cd1f944b029659ccce5fcb2adad4ff data/neoforge_tutorial/tags/block/needs_black_opal_tool.json
