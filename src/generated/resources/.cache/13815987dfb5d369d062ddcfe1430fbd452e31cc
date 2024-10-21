@@ -1,2 +1,11 @@
-// 1.21.1	2024-10-15T17:09:23.9432241	Tags for minecraft:item mod id neoforge_tutorial
+// 1.21.1	2024-10-21T22:17:26.0520069	Tags for minecraft:item mod id neoforge_tutorial
+acb5f9196a9ef148283465c67a6b7bf3f0b2300e data/c/tags/item/tools/melee_weapon.json
+6dd0753b378e3a485488f002e5ed765cc9bfd87a data/c/tags/item/tools/mining_tool.json
+06ea6460d0fd94b392eecad60e579ea58a240642 data/minecraft/tags/item/axes.json
+6dd0753b378e3a485488f002e5ed765cc9bfd87a data/minecraft/tags/item/cluster_max_harvestables.json
+fb142132c2dc451b9ba7f859cefaa940bda794ae data/minecraft/tags/item/hoes.json
+93ae1b4037b42cfdffbc3921edf8aee73b34afb8 data/minecraft/tags/item/pickaxes.json
+b8ad892b2c48b6f5898b913785ca18718de84853 data/minecraft/tags/item/shovels.json
+08366b0108b5e6cf1b48d0746e49c7bf86adb4e7 data/minecraft/tags/item/swords.json
+2dc7d9b8fb4a4470d43507fdce2091f3f74fedcc data/neoforge_tutorial/tags/item/paxels.json
 97b357417a33cb116e1e178f7044f3bcde074dc1 data/neoforge_tutorial/tags/item/transformable_items.json

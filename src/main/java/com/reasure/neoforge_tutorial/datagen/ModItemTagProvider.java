@@ -6,8 +6,10 @@ import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -27,5 +29,34 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.COAL)
                 .add(Items.DANDELION)
                 .add(Items.COMPASS);
+
+        tag(ItemTags.SWORDS)
+                .add(ModItems.BLACK_OPAL_SWORD.get());
+        tag(ItemTags.PICKAXES)
+                .add(ModItems.BLACK_OPAL_PICKAXE.get())
+                .addTag(ModTags.Items.PAXELS);
+        tag(ItemTags.SHOVELS)
+                .add(ModItems.BLACK_OPAL_SHOVEL.get())
+                .addTag(ModTags.Items.PAXELS);
+        tag(ItemTags.AXES)
+                .add(ModItems.BLACK_OPAL_AXE.get())
+                .addTag(ModTags.Items.PAXELS);
+        tag(ItemTags.HOES)
+                .add(ModItems.BLACK_OPAL_HOE.get())
+                .addTag(ModTags.Items.PAXELS);
+        tag(ModTags.Items.PAXELS)
+                .add(ModItems.BLACK_OPAL_PAXEL.get());
+
+        tag(Tags.Items.MINING_TOOL_TOOLS)
+                .add(ModItems.BLACK_OPAL_PICKAXE.get())
+                .add(ModItems.BLACK_OPAL_PAXEL.get());
+
+        tag(Tags.Items.MELEE_WEAPON_TOOLS)
+                .add(ModItems.BLACK_OPAL_SWORD.get())
+                .add(ModItems.BLACK_OPAL_AXE.get());
+
+        tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
+                .add(ModItems.BLACK_OPAL_PICKAXE.get())
+                .add(ModItems.BLACK_OPAL_PAXEL.get());
     }
 }
