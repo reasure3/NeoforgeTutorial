@@ -34,7 +34,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.BLACK_OPAL_SWORD.get());
         tag(ItemTags.PICKAXES)
                 .add(ModItems.BLACK_OPAL_PICKAXE.get())
-                .addTag(ModTags.Items.PAXELS);
+                .addTag(ModTags.Items.PAXELS)
+                .add(ModItems.BLACK_OPAL_HAMMER.get());
         tag(ItemTags.SHOVELS)
                 .add(ModItems.BLACK_OPAL_SHOVEL.get())
                 .addTag(ModTags.Items.PAXELS);
@@ -49,7 +50,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(Tags.Items.MINING_TOOL_TOOLS)
                 .add(ModItems.BLACK_OPAL_PICKAXE.get())
-                .add(ModItems.BLACK_OPAL_PAXEL.get());
+                .add(ModItems.BLACK_OPAL_PAXEL.get())
+                .add(ModItems.BLACK_OPAL_HAMMER.get());
 
         tag(Tags.Items.MELEE_WEAPON_TOOLS)
                 .add(ModItems.BLACK_OPAL_SWORD.get())
@@ -57,6 +59,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
                 .add(ModItems.BLACK_OPAL_PICKAXE.get())
-                .add(ModItems.BLACK_OPAL_PAXEL.get());
+                .add(ModItems.BLACK_OPAL_PAXEL.get())
+                .add(ModItems.BLACK_OPAL_HAMMER.get());
     }
 }

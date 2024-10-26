@@ -2,6 +2,7 @@ package com.reasure.neoforge_tutorial.item;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.item.custom.ChainsawItem;
+import com.reasure.neoforge_tutorial.item.custom.HammerItem;
 import com.reasure.neoforge_tutorial.item.custom.PaxelItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
@@ -50,6 +51,10 @@ public class ModItems {
     public static final DeferredItem<Item> BLACK_OPAL_PAXEL = ITEMS.register("black_opal_paxel",
             () -> new PaxelItem(ModToolTiers.BLACK_OPAL,
                     new Item.Properties().attributes(DiggerItem.createAttributes(ModToolTiers.BLACK_OPAL, 1, -2.8f))));
+
+    public static final DeferredItem<Item> BLACK_OPAL_HAMMER = ITEMS.register("black_opal_hammer",
+            () -> new HammerItem(ModToolTiers.BLACK_OPAL,
+                    new Item.Properties().attributes(HammerItem.createAttributes(ModToolTiers.BLACK_OPAL, 8, -3.3f))));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

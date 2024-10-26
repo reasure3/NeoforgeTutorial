@@ -1,17 +1,16 @@
 package com.reasure.neoforge_tutorial.item.custom;
 
 import com.google.common.collect.Sets;
+import com.reasure.neoforge_tutorial.event.ModEvents;
 import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -22,6 +21,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
+import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -32,7 +32,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class PaxelItem extends TieredItem {
+/**
+ * @see ModEvents#modifyItemComponent(ModifyDefaultComponentsEvent)
+ */
+public class PaxelItem extends DiggerItem {
     public static final Set<ItemAbility> DEFAULT_PAXEL_ACTIONS = Stream.of(
             ItemAbilities.DEFAULT_PICKAXE_ACTIONS,
             ItemAbilities.DEFAULT_AXE_ACTIONS,
@@ -42,7 +45,7 @@ public class PaxelItem extends TieredItem {
     ).flatMap(Set::stream).collect(Collectors.toCollection(Sets::newIdentityHashSet));
 
     public PaxelItem(Tier tier, Properties properties) {
-        super(tier, properties.component(DataComponents.TOOL, createToolProperties(tier)));
+        super(tier, ModTags.Blocks.MINEABLE_WITH_PAXEL, properties);
     }
 
     public static Tool createToolProperties(Tier tier) {
@@ -148,15 +151,5 @@ public class PaxelItem extends TieredItem {
     @Override
     public boolean canPerformAction(@NotNull ItemStack stack, @NotNull ItemAbility itemAbility) {
         return DEFAULT_PAXEL_ACTIONS.contains(itemAbility);
-    }
-
-    @Override
-    public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
-        return true;
-    }
-
-    @Override
-    public void postHurtEnemy(ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
-        stack.hurtAndBreak(2, attacker, EquipmentSlot.MAINHAND);
     }
 }

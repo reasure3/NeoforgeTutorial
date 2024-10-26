@@ -27,6 +27,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModItems.BLACK_OPAL_PAXEL.get(), "Black Opal Paxel");
 
+        add(ModItems.BLACK_OPAL_HAMMER.get(), "Black Opal Hammer");
+
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
