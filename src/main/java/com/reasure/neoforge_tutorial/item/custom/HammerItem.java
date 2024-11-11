@@ -37,6 +37,7 @@ import java.util.stream.Stream;
  * @see RenderEvent#onDrawBlock(RenderHighlightEvent.Block)
  * @see PlayerEvents#breakBlock(BlockEvent.BreakEvent)
  */
+// Todo: Hammer (extends Pickaxe) / Excavator (extends Shovel) / Bulldozer (extends Pickaxe and Shovel)
 public class HammerItem extends PickaxeItem {
     public HammerItem(Tier tier, Properties properties) {
         super(tier, properties);

@@ -3,8 +3,11 @@ package com.reasure.neoforge_tutorial.item;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.item.custom.ChainsawItem;
 import com.reasure.neoforge_tutorial.item.custom.HammerItem;
+import com.reasure.neoforge_tutorial.item.custom.ModEffectSwordItem;
 import com.reasure.neoforge_tutorial.item.custom.PaxelItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -33,8 +36,9 @@ public class ModItems {
     public static final DeferredItem<Item> FROSTFIRE_ICE = ITEMS.registerSimpleItem("frostfire_ice");
 
     public static final DeferredItem<Item> BLACK_OPAL_SWORD = ITEMS.register("black_opal_sword",
-            () -> new SwordItem(ModToolTiers.BLACK_OPAL,
-                    new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.BLACK_OPAL, 3, -2.4f))));
+            () -> new ModEffectSwordItem(ModToolTiers.BLACK_OPAL,
+                    new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.BLACK_OPAL, 3, -2.4f)),
+                    () -> new MobEffectInstance(MobEffects.LEVITATION, 400)));
     public static final DeferredItem<Item> BLACK_OPAL_PICKAXE = ITEMS.register("black_opal_pickaxe",
             () -> new PickaxeItem(ModToolTiers.BLACK_OPAL,
                     new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.BLACK_OPAL, 1, -2.8f))));
