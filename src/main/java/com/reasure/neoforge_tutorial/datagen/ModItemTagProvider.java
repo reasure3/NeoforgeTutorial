@@ -61,5 +61,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.BLACK_OPAL_PICKAXE.get())
                 .add(ModItems.BLACK_OPAL_PAXEL.get())
                 .add(ModItems.BLACK_OPAL_HAMMER.get());
+
+        tag(ItemTags.HEAD_ARMOR)
+                .add(ModItems.BLACK_OPAL_HELMET.get());
+        tag(ItemTags.CHEST_ARMOR)
+                .add(ModItems.BLACK_OPAL_CHESTPLATE.get());
+        tag(ItemTags.LEG_ARMOR)
+                .add(ModItems.BLACK_OPAL_LEGGINGS.get());
+        tag(ItemTags.FOOT_ARMOR)
+                .add(ModItems.BLACK_OPAL_BOOTS.get());
     }
 }

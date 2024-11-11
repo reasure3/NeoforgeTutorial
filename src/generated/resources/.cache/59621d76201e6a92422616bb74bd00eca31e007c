@@ -1,8 +1,12 @@
-// 1.21.1	2024-10-26T15:13:38.1920516	Item Models: neoforge_tutorial
+// 1.21.1	2024-11-11T18:39:35.6039221	Item Models: neoforge_tutorial
 e1f584b1a1f4d834972ce540e10f9893886aa244 assets/neoforge_tutorial/models/item/black_opal.json
 83b5a73da0a934c74c4af1ba13ea539858878eee assets/neoforge_tutorial/models/item/black_opal_axe.json
+202af785cd361d68939a4ea64c0dfa45e247dadc assets/neoforge_tutorial/models/item/black_opal_boots.json
+7c8646c43f3ae1d1efb4c138e08266b7a6577fa6 assets/neoforge_tutorial/models/item/black_opal_chestplate.json
 eeeec790c9dcb101e9da9f29edaf42fe1b9b56d3 assets/neoforge_tutorial/models/item/black_opal_hammer.json
+fd4a1682911587b053bd4337d316331421df41bd assets/neoforge_tutorial/models/item/black_opal_helmet.json
 821f9e90a1eb3595ca1cb7a5df08b281c0aff14b assets/neoforge_tutorial/models/item/black_opal_hoe.json
+0ef6c37abe3e0afb7adfb52daf3a1846e173ed44 assets/neoforge_tutorial/models/item/black_opal_leggings.json
 b187bc3b802750a9d709f155c3014075fb044835 assets/neoforge_tutorial/models/item/black_opal_paxel.json
 88755701d87c0de8f5fad4a7d0da03b8cfd2dc1b assets/neoforge_tutorial/models/item/black_opal_pickaxe.json
 c71cf426f8546113409b50e16bf2613babb4d52f assets/neoforge_tutorial/models/item/black_opal_shovel.json

@@ -104,6 +104,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', Tags.Items.RODS_WOODEN)
                 .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
                 .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.BLACK_OPAL_HELMET.get())
+                .pattern("XXX")
+                .pattern("X X")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.BLACK_OPAL_CHESTPLATE.get())
+                .pattern("X X")
+                .pattern("XXX")
+                .pattern("XXX")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.BLACK_OPAL_LEGGINGS.get())
+                .pattern("XXX")
+                .pattern("X X")
+                .pattern("X X")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.BLACK_OPAL_BOOTS.get())
+                .pattern("X X")
+                .pattern("X X")
+                .define('X', ModItems.BLACK_OPAL.get())
+                .unlockedBy("has_black_opal", has(ModItems.BLACK_OPAL.get()))
+                .save(recipeOutput);
     }
 
     protected static void oreSmelting(@NotNull RecipeOutput recipeOutput, List<ItemLike> ingredients, @NotNull RecipeCategory category, @NotNull ItemLike result,

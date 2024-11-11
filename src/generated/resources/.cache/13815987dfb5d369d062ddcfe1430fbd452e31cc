@@ -1,9 +1,13 @@
-// 1.21.1	2024-10-26T16:18:56.4455489	Tags for minecraft:item mod id neoforge_tutorial
+// 1.21.1	2024-11-11T18:39:35.6049176	Tags for minecraft:item mod id neoforge_tutorial
 acb5f9196a9ef148283465c67a6b7bf3f0b2300e data/c/tags/item/tools/melee_weapon.json
 6d58fc8510dcff94b690e7f7e36d354b4214a7c9 data/c/tags/item/tools/mining_tool.json
 06ea6460d0fd94b392eecad60e579ea58a240642 data/minecraft/tags/item/axes.json
+54615a0107ac9bf3a1370b0fd9bde8ace4208f27 data/minecraft/tags/item/chest_armor.json
 6d58fc8510dcff94b690e7f7e36d354b4214a7c9 data/minecraft/tags/item/cluster_max_harvestables.json
+56b1ed39fe166b42c000210b4099fb25e4ae214e data/minecraft/tags/item/foot_armor.json
+da06548f80d2e49ce6c72387a47a9df11705008e data/minecraft/tags/item/head_armor.json
 fb142132c2dc451b9ba7f859cefaa940bda794ae data/minecraft/tags/item/hoes.json
+b3dd93f38652c52bf1eb1ba543a411db8b7341ea data/minecraft/tags/item/leg_armor.json
 78ed29771752a668eff9b0a27923fbf4c49a3cdb data/minecraft/tags/item/pickaxes.json
 b8ad892b2c48b6f5898b913785ca18718de84853 data/minecraft/tags/item/shovels.json
 08366b0108b5e6cf1b48d0746e49c7bf86adb4e7 data/minecraft/tags/item/swords.json

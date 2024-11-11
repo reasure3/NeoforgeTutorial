@@ -36,6 +36,11 @@ public class ModCreativeTabs {
                         output.accept(ModItems.BLACK_OPAL_PAXEL);
 
                         output.accept(ModItems.BLACK_OPAL_HAMMER);
+
+                        output.accept(ModItems.BLACK_OPAL_HELMET);
+                        output.accept(ModItems.BLACK_OPAL_CHESTPLATE);
+                        output.accept(ModItems.BLACK_OPAL_LEGGINGS);
+                        output.accept(ModItems.BLACK_OPAL_BOOTS);
                     }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =

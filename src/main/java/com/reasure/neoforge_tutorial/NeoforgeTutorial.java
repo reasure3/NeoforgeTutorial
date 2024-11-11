@@ -2,6 +2,7 @@ package com.reasure.neoforge_tutorial;
 
 import com.mojang.logging.LogUtils;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
+import com.reasure.neoforge_tutorial.item.ModArmorMaterials;
 import com.reasure.neoforge_tutorial.item.ModCreativeTabs;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -40,6 +41,8 @@ public class NeoforgeTutorial {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModArmorMaterials.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Neoforge_tutorial) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
@@ -67,6 +70,10 @@ public class NeoforgeTutorial {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.BLACK_OPAL_SWORD);
+            event.accept(ModItems.BLACK_OPAL_HELMET);
+            event.accept(ModItems.BLACK_OPAL_CHESTPLATE);
+            event.accept(ModItems.BLACK_OPAL_LEGGINGS);
+            event.accept(ModItems.BLACK_OPAL_BOOTS);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.CHAINSAW);
