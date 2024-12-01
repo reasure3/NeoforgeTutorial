@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-01T15:08:07.831178	Item Models: neoforge_tutorial
+// 1.21.1	2024-12-01T15:29:49.4455739	Item Models: neoforge_tutorial
 e1f584b1a1f4d834972ce540e10f9893886aa244 assets/neoforge_tutorial/models/item/black_opal.json
 83b5a73da0a934c74c4af1ba13ea539858878eee assets/neoforge_tutorial/models/item/black_opal_axe.json
 4842d245457550799e4e4b54e9bee3f20a741bb4 assets/neoforge_tutorial/models/item/black_opal_boots.json
@@ -36,6 +36,7 @@ d202d8bc437cb1c5fadb9e3a2dc97f0904a8b84f assets/neoforge_tutorial/models/item/bl
 5954251bddcb57b4c4e07cac1ea065f9cc181c06 assets/neoforge_tutorial/models/item/black_opal_helmet_quartz_trim.json
 d8131af991f7fc1ac109562d44baa8b3b93fa590 assets/neoforge_tutorial/models/item/black_opal_helmet_redstone_trim.json
 821f9e90a1eb3595ca1cb7a5df08b281c0aff14b assets/neoforge_tutorial/models/item/black_opal_hoe.json
+927ef57f5fb5b1e04c9478bbb1cf052421fb79ae assets/neoforge_tutorial/models/item/black_opal_horse_armor.json
 a2cf28c822c29cb38139db403e6fb21ac324f6b9 assets/neoforge_tutorial/models/item/black_opal_leggings.json
 459002e73b4ee80e807884688e44a4ea821043fe assets/neoforge_tutorial/models/item/black_opal_leggings_amethyst_trim.json
 76d7b179420e5eef770195373f77bb68f7e0da70 assets/neoforge_tutorial/models/item/black_opal_leggings_copper_trim.json

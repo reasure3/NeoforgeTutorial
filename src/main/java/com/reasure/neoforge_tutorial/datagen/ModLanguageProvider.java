@@ -34,6 +34,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.BLACK_OPAL_LEGGINGS.get(), "Black Opal Leggings");
         add(ModItems.BLACK_OPAL_BOOTS.get(), "Black Opal Boots");
 
+        add(ModItems.BLACK_OPAL_HORSE_ARMOR.get(), "Black Opal Horse Armor");
+
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
