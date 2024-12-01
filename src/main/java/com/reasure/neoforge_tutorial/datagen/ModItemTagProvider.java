@@ -70,5 +70,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.BLACK_OPAL_LEGGINGS.get());
         tag(ItemTags.FOOT_ARMOR)
                 .add(ModItems.BLACK_OPAL_BOOTS.get());
+
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.BLACK_OPAL_HELMET.get())
+                .add(ModItems.BLACK_OPAL_CHESTPLATE.get())
+                .add(ModItems.BLACK_OPAL_LEGGINGS.get())
+                .add(ModItems.BLACK_OPAL_BOOTS.get());
     }
 }
