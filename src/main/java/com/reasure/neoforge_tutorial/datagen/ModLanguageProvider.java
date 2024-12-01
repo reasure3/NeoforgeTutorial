@@ -61,6 +61,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModBlocks.MAGIC_BLOCK.get(), "Magic Block");
 
+        add(ModBlocks.BLACK_OPAL_LAMP.get(), "Black Opal Lamp");
+
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.shift", "Press §eShift§r for more Information!");
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.1", "This chainsaw is awesome and will cut down trees!");
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.2", "§oChainsaw go vroom!§r");

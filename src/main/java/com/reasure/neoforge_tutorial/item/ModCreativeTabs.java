@@ -74,6 +74,8 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.BLACK_OPAL_NETHER_ORE);
 
                         output.accept(ModBlocks.MAGIC_BLOCK);
+
+                        output.accept(ModBlocks.BLACK_OPAL_LAMP);
                     }).build());
 
     public static void register(IEventBus eventBus) {

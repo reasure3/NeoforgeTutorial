@@ -1,6 +1,7 @@
 package com.reasure.neoforge_tutorial.block;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
+import com.reasure.neoforge_tutorial.block.custom.BlackOpalLampBlock;
 import com.reasure.neoforge_tutorial.block.custom.MagicBlock;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -63,6 +64,10 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).noLootTable()));
+
+    public static final DeferredBlock<Block> BLACK_OPAL_LAMP = registerBlock("black_opal_lamp",
+            () -> new BlackOpalLampBlock(BlockBehaviour.Properties.of().strength(3f)
+                    .requiresCorrectToolForDrops().lightLevel(state -> state.getValue(BlackOpalLampBlock.CLICKED) ? 15 : 0)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

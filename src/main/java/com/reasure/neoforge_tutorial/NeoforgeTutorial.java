@@ -117,6 +117,7 @@ public class NeoforgeTutorial {
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.MAGIC_BLOCK);
+            event.accept(ModBlocks.BLACK_OPAL_LAMP);
         }
     }
 
