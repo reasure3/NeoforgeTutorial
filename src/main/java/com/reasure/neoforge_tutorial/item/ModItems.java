@@ -1,10 +1,7 @@
 package com.reasure.neoforge_tutorial.item;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
-import com.reasure.neoforge_tutorial.item.custom.ChainsawItem;
-import com.reasure.neoforge_tutorial.item.custom.HammerItem;
-import com.reasure.neoforge_tutorial.item.custom.ModEffectSwordItem;
-import com.reasure.neoforge_tutorial.item.custom.PaxelItem;
+import com.reasure.neoforge_tutorial.item.custom.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -61,16 +58,16 @@ public class ModItems {
                     new Item.Properties().attributes(HammerItem.createAttributes(ModToolTiers.BLACK_OPAL, 8, -3.3f))));
 
     public static final DeferredItem<Item> BLACK_OPAL_HELMET = ITEMS.register("black_opal_helmet",
-            () -> new ArmorItem(ModArmorMaterials.BLACK_OPAL, ArmorItem.Type.HELMET,
+            () -> new ModArmorItem(ModArmorMaterials.BLACK_OPAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(16))));
     public static final DeferredItem<Item> BLACK_OPAL_CHESTPLATE = ITEMS.register("black_opal_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.BLACK_OPAL, ArmorItem.Type.CHESTPLATE,
+            () -> new ModArmorItem(ModArmorMaterials.BLACK_OPAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(16))));
     public static final DeferredItem<Item> BLACK_OPAL_LEGGINGS = ITEMS.register("black_opal_leggings",
-            () -> new ArmorItem(ModArmorMaterials.BLACK_OPAL, ArmorItem.Type.LEGGINGS,
+            () -> new ModArmorItem(ModArmorMaterials.BLACK_OPAL, ArmorItem.Type.LEGGINGS,
                     new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(16))));
     public static final DeferredItem<Item> BLACK_OPAL_BOOTS = ITEMS.register("black_opal_boots",
-            () -> new ArmorItem(ModArmorMaterials.BLACK_OPAL, ArmorItem.Type.BOOTS,
+            () -> new ModArmorItem(ModArmorMaterials.BLACK_OPAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(16))));
 
     public static void register(IEventBus eventBus) {
