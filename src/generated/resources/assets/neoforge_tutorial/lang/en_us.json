@@ -38,5 +38,7 @@
   "tooltip.neoforge_tutorial.chainsaw.tooltip.2": "§oChainsaw go vroom!§r",
   "tooltip.neoforge_tutorial.chainsaw.tooltip.shift": "Press §eShift§r for more Information!",
   "tooltip.neoforge_tutorial.magic_block.tooltip.1": "This Block is §9MAGICAL§r",
-  "tooltip.neoforge_tutorial.tomato.1": "Tomato; Tomato"
+  "tooltip.neoforge_tutorial.tomato.1": "Tomato; Tomato",
+  "trim_material.neoforge_tutorial.black_opal": "Black Opal Material",
+  "trim_pattern.neoforge_tutorial.kaupen": "Kaupen Armor Trim"
 }

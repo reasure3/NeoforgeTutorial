@@ -1,0 +1,8 @@
+{
+  "asset_id": "neoforge_tutorial:kaupen",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.neoforge_tutorial.kaupen"
+  },
+  "template_item": "neoforge_tutorial:kaupen_armor_trim_smithing_template"
+}

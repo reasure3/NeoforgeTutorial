@@ -1,0 +1,9 @@
+{
+  "asset_name": "black_opal",
+  "description": {
+    "color": "#031CFC",
+    "translate": "trim_material.neoforge_tutorial.black_opal"
+  },
+  "ingredient": "neoforge_tutorial:black_opal",
+  "item_model_index": 0.3
+}

@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-01T15:29:49.4455739	Item Models: neoforge_tutorial
+// 1.21.1	2024-12-01T16:15:55.4762057	Item Models: neoforge_tutorial
 e1f584b1a1f4d834972ce540e10f9893886aa244 assets/neoforge_tutorial/models/item/black_opal.json
 83b5a73da0a934c74c4af1ba13ea539858878eee assets/neoforge_tutorial/models/item/black_opal_axe.json
 4842d245457550799e4e4b54e9bee3f20a741bb4 assets/neoforge_tutorial/models/item/black_opal_boots.json
@@ -54,5 +54,6 @@ c71cf426f8546113409b50e16bf2613babb4d52f assets/neoforge_tutorial/models/item/bl
 988d0073e34997f4a1dc1b6fc59d84f73b4635cf assets/neoforge_tutorial/models/item/black_opal_sword.json
 6732a652782452a8151718a71b5ed056ca001c79 assets/neoforge_tutorial/models/item/chainsaw.json
 a0304a77465b2f81ca94acf1d367e38d22567d93 assets/neoforge_tutorial/models/item/frostfire_ice.json
+0129c24f766dc1d0e62b17f6eb0bff094dff2e7c assets/neoforge_tutorial/models/item/kaupen_armor_trim_smithing_template.json
 163f4fac6895e3961a676971569574047c6ca0b7 assets/neoforge_tutorial/models/item/raw_black_opal.json
 8827ab0881bd446b91ff8862315b8b0a5ca09bbf assets/neoforge_tutorial/models/item/tomato.json

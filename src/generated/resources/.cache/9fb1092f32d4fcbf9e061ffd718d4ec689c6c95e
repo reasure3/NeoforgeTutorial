@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-11T18:39:35.6003456	Recipes
+// 1.21.1	2024-12-01T16:15:55.4708804	Recipes
 0749993b594946e608ff6b786469736ca688bc6e data/neoforge_tutorial/advancement/recipes/building_blocks/black_opal_slab.json
 580ad48f6f5de7340c3abe794fdb2283eb0cc6e5 data/neoforge_tutorial/advancement/recipes/building_blocks/black_opal_stairs.json
 699283c8e80529fbe73151679bd17ac4f01da7ba data/neoforge_tutorial/advancement/recipes/building_blocks/black_opal_wall.json
@@ -21,6 +21,7 @@ fb1d8ec4004e2d190bb2aa1e8b666bb7634d79f7 data/neoforge_tutorial/advancement/reci
 7a645818d6e83ec2d3077023365cdb456ebd02bb data/neoforge_tutorial/advancement/recipes/misc/black_opal_from_smelting_black_opal_nether_ore.json
 bc2c7381ec88efaf24463b9e2256cc7154f3901b data/neoforge_tutorial/advancement/recipes/misc/black_opal_from_smelting_black_opal_ore.json
 9c191c579ce177a2607c4fe6e6516c9c68d7feea data/neoforge_tutorial/advancement/recipes/misc/black_opal_from_smelting_raw_black_opal.json
+9d7e1cece776b8b00fdaf02da7a149cbb17c0996 data/neoforge_tutorial/advancement/recipes/misc/kaupen.json
 78d8fc792cf492ed741bdf6c5f3c1d5c93545f3f data/neoforge_tutorial/advancement/recipes/redstone/black_opal_button.json
 9734a43fcf0a11203c6f94c42bceb1fa6121aa36 data/neoforge_tutorial/advancement/recipes/redstone/black_opal_door.json
 98c77ba2e634dc024be5b70cb7fa3089698fd81e data/neoforge_tutorial/advancement/recipes/redstone/black_opal_fence_gate.json
@@ -61,3 +62,4 @@ de345cf0b4bc1c2177848017cd173a9bc79fa572 data/neoforge_tutorial/recipe/black_opa
 4fbca9d778a059113801e8b810b198b39f5dd244 data/neoforge_tutorial/recipe/black_opal_sword.json
 538d7c5f20f24787f935c96da5a776048a4c5465 data/neoforge_tutorial/recipe/black_opal_trapdoor.json
 d10433c5617ce2c7351a0e6dafc265ee3eb91b45 data/neoforge_tutorial/recipe/black_opal_wall.json
+99c6f557ce0f27e7bb78942985fbb07e2482fa1a data/neoforge_tutorial/recipe/kaupen.json

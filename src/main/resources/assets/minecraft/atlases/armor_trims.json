@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "sources": [
+    {
+      "type": "paletted_permutations",
+      "textures": [
+        "neoforge_tutorial:trims/models/armor/kaupen",
+        "neoforge_tutorial:trims/models/armor/kaupen_leggings"
+
+      ],
+      "palette_key": "trims/color_palettes/trim_palette",
+      "permutations": {
+        "black_opal": "neoforge_tutorial:trims/color_palettes/black_opal"
+      }
+    }
+  ]
+}

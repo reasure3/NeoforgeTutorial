@@ -36,6 +36,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModItems.BLACK_OPAL_HORSE_ARMOR.get(), "Black Opal Horse Armor");
 
+        add(ModItems.KAUPEN_SMITHING_TEMPLATE.get(), "Kaupen Trim Template");
+
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
@@ -67,5 +69,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add("tooltip.neoforge_tutorial.tomato.1", "Tomato; Tomato");
         add("itemGroup.neoforge_tutorial.black_opal_items_tab", "Black Opal Items");
         add("itemGroup.neoforge_tutorial.black_opal_blocks_tab", "Black Opal Blocks");
+
+        add("trim_pattern.neoforge_tutorial.kaupen", "Kaupen Armor Trim");
+        add("trim_material.neoforge_tutorial.black_opal", "Black Opal Material");
     }
 }
