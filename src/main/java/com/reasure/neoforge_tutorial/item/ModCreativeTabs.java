@@ -44,6 +44,9 @@ public class ModCreativeTabs {
 
                         output.accept(ModItems.BLACK_OPAL_HORSE_ARMOR);
                         output.accept(ModItems.KAUPEN_SMITHING_TEMPLATE);
+
+                        output.accept(ModItems.METAL_DETECTOR);
+                        output.accept(ModItems.DATA_TABLET);
                     }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =

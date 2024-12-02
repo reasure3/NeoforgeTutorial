@@ -2,6 +2,7 @@ package com.reasure.neoforge_tutorial;
 
 import com.mojang.logging.LogUtils;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
+import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.item.ModArmorMaterials;
 import com.reasure.neoforge_tutorial.item.ModCreativeTabs;
 import com.reasure.neoforge_tutorial.item.ModItems;
@@ -40,6 +41,8 @@ public class NeoforgeTutorial {
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModDataComponentTypes.register(modEventBus);
 
         ModArmorMaterials.register(modEventBus);
 
@@ -84,6 +87,7 @@ public class NeoforgeTutorial {
             event.accept(ModItems.BLACK_OPAL_HOE);
             event.accept(ModItems.BLACK_OPAL_PAXEL);
             event.accept(ModItems.BLACK_OPAL_HAMMER);
+            event.accept(ModItems.METAL_DETECTOR);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.TOMATO);

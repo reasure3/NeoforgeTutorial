@@ -1,5 +1,6 @@
 package com.reasure.neoforge_tutorial.item.custom;
 
+import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -32,6 +33,8 @@ public class ChainsawItem extends Item {
 
                 context.getItemInHand().hurtAndBreak(1, (ServerLevel) level, ((ServerPlayer) context.getPlayer()),
                         item -> Objects.requireNonNull(context.getPlayer()).onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+
+                context.getItemInHand().set(ModDataComponentTypes.COORDINATES, context.getClickedPos());
             }
             return InteractionResult.sidedSuccess(level.isClientSide());
         }
@@ -46,6 +49,10 @@ public class ChainsawItem extends Item {
             tooltipComponents.add(Component.translatable("tooltip.neoforge_tutorial.chainsaw.tooltip.2"));
         } else {
             tooltipComponents.add(Component.translatable("tooltip.neoforge_tutorial.chainsaw.tooltip.shift"));
+        }
+
+        if (stack.has(ModDataComponentTypes.COORDINATES.get())) {
+            tooltipComponents.add(Component.literal("Last Tree was chopped at " + stack.get(ModDataComponentTypes.COORDINATES)));
         }
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);

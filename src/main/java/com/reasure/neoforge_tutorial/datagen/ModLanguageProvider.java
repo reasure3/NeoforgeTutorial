@@ -38,6 +38,9 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModItems.KAUPEN_SMITHING_TEMPLATE.get(), "Kaupen Trim Template");
 
+        add(ModItems.METAL_DETECTOR.get(), "Metal Detector");
+        add(ModItems.DATA_TABLET.get(), "Data Tablet");
+
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
@@ -74,5 +77,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add("trim_pattern.neoforge_tutorial.kaupen", "Kaupen Armor Trim");
         add("trim_material.neoforge_tutorial.black_opal", "Black Opal Material");
+
+        add("item.neoforge_tutorial.metal_detector.no_valuables", "No Valuables Found");
     }
 }

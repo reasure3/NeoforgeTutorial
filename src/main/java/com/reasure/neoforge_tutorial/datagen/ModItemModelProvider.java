@@ -62,6 +62,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.BLACK_OPAL_HORSE_ARMOR.get());
         basicItem(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
+
+        basicItem(ModItems.METAL_DETECTOR.get());
+        basicItem(ModItems.DATA_TABLET.get());
     }
 
     private void handheldItem(DeferredItem<Item> item) {
