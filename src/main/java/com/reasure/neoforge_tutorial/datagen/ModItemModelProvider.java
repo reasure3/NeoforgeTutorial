@@ -10,6 +10,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -64,13 +65,28 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
 
         basicItem(ModItems.METAL_DETECTOR.get());
-        basicItem(ModItems.DATA_TABLET.get());
+        dataTablet();
     }
 
     private void handheldItem(DeferredItem<Item> item) {
         withExistingParent(item.getId().getPath(),
                 ResourceLocation.withDefaultNamespace("item/handheld"))
                 .texture("layer0", item.getId().withPrefix("item/"));
+    }
+
+    private void dataTablet() {
+        ModelFile on = getBuilder("neoforge_tutorial:data_tablet_on")
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", "neoforge_tutorial:item/data_tablet");
+
+        ItemModelBuilder base = getBuilder("neoforge_tutorial:data_tablet")
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", "neoforge_tutorial:item/data_tablet_off");
+
+        base.override()
+                .predicate(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "on"), 1f)
+                .model(on)
+                .end();
     }
 
     // Shoutout to El_Redstoniano for making this

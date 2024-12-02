@@ -5,6 +5,7 @@ import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.item.ModArmorMaterials;
 import com.reasure.neoforge_tutorial.item.ModCreativeTabs;
+import com.reasure.neoforge_tutorial.item.ModItemProperties;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -140,6 +141,7 @@ public class NeoforgeTutorial {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }
