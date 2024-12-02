@@ -79,6 +79,7 @@ public class NeoforgeTutorial {
             event.accept(ModItems.BLACK_OPAL_LEGGINGS);
             event.accept(ModItems.BLACK_OPAL_BOOTS);
             event.accept(ModItems.BLACK_OPAL_HORSE_ARMOR);
+            event.accept(ModItems.KAUPEN_BOW);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.CHAINSAW);

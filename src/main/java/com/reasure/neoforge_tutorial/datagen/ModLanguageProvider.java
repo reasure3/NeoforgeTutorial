@@ -40,6 +40,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModItems.METAL_DETECTOR.get(), "Metal Detector");
         add(ModItems.DATA_TABLET.get(), "Data Tablet");
+        add(ModItems.KAUPEN_BOW.get(), "Kaupen Bow");
 
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");

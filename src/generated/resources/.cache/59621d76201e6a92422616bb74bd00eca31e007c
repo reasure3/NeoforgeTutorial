@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-02T14:56:32.7028208	Item Models: neoforge_tutorial
+// 1.21.1	2024-12-02T15:42:32.5921176	Item Models: neoforge_tutorial
 e1f584b1a1f4d834972ce540e10f9893886aa244 assets/neoforge_tutorial/models/item/black_opal.json
 83b5a73da0a934c74c4af1ba13ea539858878eee assets/neoforge_tutorial/models/item/black_opal_axe.json
 4842d245457550799e4e4b54e9bee3f20a741bb4 assets/neoforge_tutorial/models/item/black_opal_boots.json
@@ -57,6 +57,10 @@ c71cf426f8546113409b50e16bf2613babb4d52f assets/neoforge_tutorial/models/item/bl
 828988158d7fae0b25af7d23534f137ad8a63a61 assets/neoforge_tutorial/models/item/data_tablet_on.json
 a0304a77465b2f81ca94acf1d367e38d22567d93 assets/neoforge_tutorial/models/item/frostfire_ice.json
 0129c24f766dc1d0e62b17f6eb0bff094dff2e7c assets/neoforge_tutorial/models/item/kaupen_armor_trim_smithing_template.json
+9de5ad223ec05d0703eca14e3341b55e254da9ef assets/neoforge_tutorial/models/item/kaupen_bow.json
+b0e20b580c027b70950c6db56765c67b4bef285a assets/neoforge_tutorial/models/item/kaupen_bow_pulling_0.json
+cc9a9797b96b5c78f66bae843a6721abba7e529d assets/neoforge_tutorial/models/item/kaupen_bow_pulling_1.json
+b6d6fa4968f3f88d1cc6c678f51582d45699ad72 assets/neoforge_tutorial/models/item/kaupen_bow_pulling_2.json
 dcfa15dd7a858c5001e3b0df7e938e8f545ab20b assets/neoforge_tutorial/models/item/metal_detector.json
 163f4fac6895e3961a676971569574047c6ca0b7 assets/neoforge_tutorial/models/item/raw_black_opal.json
 8827ab0881bd446b91ff8862315b8b0a5ca09bbf assets/neoforge_tutorial/models/item/tomato.json

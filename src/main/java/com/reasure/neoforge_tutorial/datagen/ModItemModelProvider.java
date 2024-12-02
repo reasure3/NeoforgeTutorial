@@ -66,6 +66,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.METAL_DETECTOR.get());
         dataTablet();
+
+        bowItem(ModItems.KAUPEN_BOW);
     }
 
     private void handheldItem(DeferredItem<Item> item) {
@@ -86,6 +88,37 @@ public class ModItemModelProvider extends ItemModelProvider {
         base.override()
                 .predicate(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "on"), 1f)
                 .model(on)
+                .end();
+    }
+
+    private void bowItem(DeferredItem<Item> item) {
+        ModelFile[] pulling = new ModelFile[3];
+        for (int i = 0; i < 3; i++) {
+            ResourceLocation loc = item.getId().withPrefix("item/").withSuffix("_pulling_" + i);
+            pulling[i] = getBuilder(loc.toString())
+                    .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                    .texture("layer0", loc);
+        }
+
+        ItemModelBuilder base = getBuilder(item.getId().withPrefix("item/").toString())
+                .parent(new ModelFile.UncheckedModelFile("neoforge_tutorial:item/bow_base"))
+                .texture("layer0", item.getId().withPrefix("item/"));
+
+        base.override()
+                .predicate(mcLoc("pulling"), 1f)
+                .model(pulling[0])
+                .end();
+
+        base.override()
+                .predicate(mcLoc("pulling"), 1f)
+                .predicate(mcLoc("pull"), 0.65f)
+                .model(pulling[1])
+                .end();
+
+        base.override()
+                .predicate(mcLoc("pulling"), 1f)
+                .predicate(mcLoc("pull"), 0.9f)
+                .model(pulling[2])
                 .end();
     }
 
