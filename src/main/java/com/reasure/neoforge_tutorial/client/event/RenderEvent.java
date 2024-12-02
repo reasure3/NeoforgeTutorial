@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.client.render.RenderUtils;
+import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.item.custom.HammerItem;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -21,6 +22,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ComputeFovModifierEvent;
 import net.neoforged.neoforge.client.event.RenderHighlightEvent;
 
 @EventBusSubscriber(modid = NeoforgeTutorial.MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
@@ -52,6 +54,22 @@ public class RenderEvent {
                     });
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onComputeFovModifierEvent(ComputeFovModifierEvent event) {
+        if (event.getPlayer().isUsingItem() && event.getPlayer().getUseItem().getItem() == ModItems.KAUPEN_BOW.get()) {
+            float fovModifier = 1f;
+            int ticksUsingItem = event.getPlayer().getTicksUsingItem();
+            float deltaTicks = (float) ticksUsingItem / 20f;
+            if (deltaTicks > 1f) {
+                deltaTicks = 1f;
+            } else {
+                deltaTicks *= deltaTicks;
+            }
+            fovModifier *= 1f - deltaTicks * 0.15f;
+            event.setNewFovModifier(fovModifier);
         }
     }
 }
