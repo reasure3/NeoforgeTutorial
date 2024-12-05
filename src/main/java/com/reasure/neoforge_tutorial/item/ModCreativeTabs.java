@@ -48,6 +48,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.METAL_DETECTOR);
                         output.accept(ModItems.DATA_TABLET);
                         output.accept(ModItems.KAUPEN_BOW);
+
+                        output.accept(ModItems.TOMATO_SEEDS);
                     }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =

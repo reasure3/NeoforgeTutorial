@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-02T15:42:32.5921176	Item Models: neoforge_tutorial
+// 1.21.1	2024-12-05T13:55:16.9694606	Item Models: neoforge_tutorial
 e1f584b1a1f4d834972ce540e10f9893886aa244 assets/neoforge_tutorial/models/item/black_opal.json
 83b5a73da0a934c74c4af1ba13ea539858878eee assets/neoforge_tutorial/models/item/black_opal_axe.json
 4842d245457550799e4e4b54e9bee3f20a741bb4 assets/neoforge_tutorial/models/item/black_opal_boots.json
@@ -64,3 +64,4 @@ b6d6fa4968f3f88d1cc6c678f51582d45699ad72 assets/neoforge_tutorial/models/item/ka
 dcfa15dd7a858c5001e3b0df7e938e8f545ab20b assets/neoforge_tutorial/models/item/metal_detector.json
 163f4fac6895e3961a676971569574047c6ca0b7 assets/neoforge_tutorial/models/item/raw_black_opal.json
 8827ab0881bd446b91ff8862315b8b0a5ca09bbf assets/neoforge_tutorial/models/item/tomato.json
+1b83f4438e82c76a7541cdfef393d01b0de3fd19 assets/neoforge_tutorial/models/item/tomato_seeds.json

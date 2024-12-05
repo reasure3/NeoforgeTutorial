@@ -68,6 +68,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         dataTablet();
 
         bowItem(ModItems.KAUPEN_BOW);
+
+        basicItem(ModItems.TOMATO_SEEDS.get());
     }
 
     private void handheldItem(DeferredItem<Item> item) {

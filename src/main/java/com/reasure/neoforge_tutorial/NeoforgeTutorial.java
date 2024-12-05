@@ -93,6 +93,7 @@ public class NeoforgeTutorial {
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.TOMATO);
+            event.accept(ModItems.TOMATO_SEEDS);
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {

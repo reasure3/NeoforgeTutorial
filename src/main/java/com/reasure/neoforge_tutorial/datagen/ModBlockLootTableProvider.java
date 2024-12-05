@@ -1,7 +1,9 @@
 package com.reasure.neoforge_tutorial.datagen;
 
 import com.reasure.neoforge_tutorial.block.ModBlocks;
+import com.reasure.neoforge_tutorial.block.custom.TomatoCropBlock;
 import com.reasure.neoforge_tutorial.item.ModItems;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -15,6 +17,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
 
@@ -53,6 +56,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(block, ModItems.RAW_BLACK_OPAL.get(), 3, 9));
 
         dropSelf(ModBlocks.BLACK_OPAL_LAMP.get());
+
+        add(ModBlocks.TOMATO_CROP.get(), block -> createCropDrops(block, ModItems.TOMATO.get(), ModItems.TOMATO_SEEDS.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TomatoCropBlock.AGE, 5))));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float minDrops, float maxDrops) {

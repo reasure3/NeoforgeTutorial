@@ -3,9 +3,12 @@ package com.reasure.neoforge_tutorial.datagen;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.block.custom.BlackOpalLampBlock;
+import com.reasure.neoforge_tutorial.block.custom.TomatoCropBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -45,6 +48,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.MAGIC_BLOCK);
 
         customLamp();
+
+        makeCrop((CropBlock) ModBlocks.TOMATO_CROP.get(), TomatoCropBlock.AGE, "tomato_crop_stage", "tomato_crop_stage");
+    }
+
+    private void makeCrop(CropBlock block, IntegerProperty ageProperty, String modelName, String textureName) {
+        getVariantBuilder(block).forAllStates(state -> states(state, block, ageProperty, modelName, textureName));
+    }
+
+    private ConfiguredModel[] states(BlockState state, CropBlock block, IntegerProperty ageProperty, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(ageProperty),
+                        ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "block/" + textureName + state.getValue(ageProperty)))
+                .renderType("cutout"));
+        return models;
     }
 
     private void customLamp() {

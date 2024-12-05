@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-01T17:32:46.5260218	Loot Tables
+// 1.21.1	2024-12-05T13:55:16.9669642	Loot Tables
 7e943b5a59e8ce9852d8f8c6ce9bae66fb0c74a9 data/neoforge_tutorial/loot_table/blocks/black_opal_block.json
 22e07db84d9a4f603a956e0b4628cd21341c33b0 data/neoforge_tutorial/loot_table/blocks/black_opal_button.json
 6cb744458d148ebe68eee0ef606ca0d5b4091bfc data/neoforge_tutorial/loot_table/blocks/black_opal_deepslate_ore.json
@@ -15,3 +15,4 @@ d572e4778f5ab64762617270b369a25197cb8960 data/neoforge_tutorial/loot_table/block
 b927335c9b3314d0c8368fbf214c26f4ead05a51 data/neoforge_tutorial/loot_table/blocks/black_opal_trapdoor.json
 bf5e112917aedb93f5442b9fd9145b90e8c00105 data/neoforge_tutorial/loot_table/blocks/black_opal_wall.json
 bc0db8c9f24bfc2ce2456fa3ec98ee6c7cac78eb data/neoforge_tutorial/loot_table/blocks/raw_black_opal_block.json
+feed755e8c7000179047d45c244e996f0e141de2 data/neoforge_tutorial/loot_table/blocks/tomato_crop.json

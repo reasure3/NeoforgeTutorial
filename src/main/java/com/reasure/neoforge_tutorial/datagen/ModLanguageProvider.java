@@ -42,6 +42,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.DATA_TABLET.get(), "Data Tablet");
         add(ModItems.KAUPEN_BOW.get(), "Kaupen Bow");
 
+        add(ModItems.TOMATO_SEEDS.get(), "Tomato Seeds");
+
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
@@ -66,6 +68,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.MAGIC_BLOCK.get(), "Magic Block");
 
         add(ModBlocks.BLACK_OPAL_LAMP.get(), "Black Opal Lamp");
+
+        add(ModBlocks.TOMATO_CROP.get(), "Tomato Crop");
 
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.shift", "Press §eShift§r for more Information!");
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.1", "This chainsaw is awesome and will cut down trees!");
