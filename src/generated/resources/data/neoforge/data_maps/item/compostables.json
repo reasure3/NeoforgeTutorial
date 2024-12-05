@@ -1,0 +1,11 @@
+{
+  "values": {
+    "neoforge_tutorial:tomato": {
+      "chance": 0.45
+    },
+    "neoforge_tutorial:tomato_seeds": {
+      "can_villager_compost": true,
+      "chance": 0.2
+    }
+  }
+}
