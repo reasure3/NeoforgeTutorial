@@ -4,6 +4,7 @@ import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.block.custom.BlackOpalLampBlock;
 import com.reasure.neoforge_tutorial.block.custom.TomatoCropBlock;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -50,6 +51,35 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customLamp();
 
         makeCrop((CropBlock) ModBlocks.TOMATO_CROP.get(), TomatoCropBlock.AGE, "tomato_crop_stage", "tomato_crop_stage");
+
+        makeTree(ModBlocks.EBONY_LOG, ModBlocks.EBONY_WOOD, ModBlocks.STRIPPED_EBONY_LOG, ModBlocks.STRIPPED_EBONY_WOOD);
+        blockWithItem(ModBlocks.EBONY_PLANKS);
+        leavesBlock(ModBlocks.EBONY_LEAVES);
+        saplingBlock(ModBlocks.EBONY_SAPLING);
+    }
+
+    private void makeTree(DeferredBlock<Block> log, DeferredBlock<Block> wood, DeferredBlock<Block> strippedLog, DeferredBlock<Block> strippedWood) {
+        logBlock((RotatedPillarBlock) log.get());
+        axisBlock((RotatedPillarBlock) wood.get(), blockTexture(log.get()), blockTexture(log.get()));
+        logBlock((RotatedPillarBlock) strippedLog.get());
+        axisBlock((RotatedPillarBlock) strippedWood.get(), blockTexture(strippedLog.get()), blockTexture(strippedLog.get()));
+        blockItem(log);
+        blockItem(wood);
+        blockItem(strippedLog);
+        blockItem(strippedWood);
+    }
+
+    private void leavesBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlockWithItem(deferredBlock.get(),
+                models().singleTexture(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(deferredBlock.get())).renderType("cutout"));
+    }
+
+    private void saplingBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlock(deferredBlock.get(), models().cross(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), blockTexture(deferredBlock.get())).renderType("cutout"));
+        itemModels().getBuilder(deferredBlock.getId().getPath())
+                .parent(new ModelFile.UncheckedModelFile("item/handheld"))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "block/" + deferredBlock.getId().getPath()));
     }
 
     private void makeCrop(CropBlock block, IntegerProperty ageProperty, String modelName, String textureName) {

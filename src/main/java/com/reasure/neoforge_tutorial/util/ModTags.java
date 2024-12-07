@@ -7,6 +7,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 
 public class ModTags {
     public static class Blocks {
@@ -16,6 +17,8 @@ public class ModTags {
 
         public static final TagKey<Block> MINEABLE_WITH_PAXEL = createTag("mineable/paxel");
 
+        public static final TagKey<Block> EBONY_LOGS = createTag("ebony_logs");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, name));
         }
@@ -24,6 +27,7 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
         public static final TagKey<Item> PAXELS = createTag("paxels");
+        public static final TagKey<Item> EBONY_LOGS = createTag("ebony_logs");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, name));

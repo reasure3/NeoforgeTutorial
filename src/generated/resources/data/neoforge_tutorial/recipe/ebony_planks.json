@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "neoforge_tutorial:ebony_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "neoforge_tutorial:ebony_planks"
+  }
+}

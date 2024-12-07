@@ -71,6 +71,14 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModBlocks.TOMATO_CROP.get(), "Tomato Crop");
 
+        add(ModBlocks.EBONY_LOG.get(), "Ebony Log");
+        add(ModBlocks.EBONY_PLANKS.get(), "Ebony Planks");
+        add(ModBlocks.EBONY_WOOD.get(), "Ebony Wood");
+        add(ModBlocks.STRIPPED_EBONY_LOG.get(), "Stripped Ebony Log");
+        add(ModBlocks.STRIPPED_EBONY_WOOD.get(), "Stripped Ebony Wood");
+        add(ModBlocks.EBONY_LEAVES.get(), "Ebony Leaves");
+        add(ModBlocks.EBONY_SAPLING.get(), "Ebony Sapling");
+
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.shift", "Press §eShift§r for more Information!");
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.1", "This chainsaw is awesome and will cut down trees!");
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.2", "§oChainsaw go vroom!§r");

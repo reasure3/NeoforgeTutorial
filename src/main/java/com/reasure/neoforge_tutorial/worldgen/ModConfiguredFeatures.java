@@ -1,19 +1,37 @@
 package com.reasure.neoforge_tutorial.worldgen;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
+import com.reasure.neoforge_tutorial.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 // Configured Features -> Placed Features                  -> Biome Modifiers
 // Tree (How look)     -> How many? Where to place? etc... -> Should I place the feature?
 public class ModConfiguredFeatures {
-    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+    public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
 
+    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+        register(context, EBONY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.EBONY_LOG.get()),
+                        new StraightTrunkPlacer(4, 5, 3),
+
+                        BlockStateProvider.simple(ModBlocks.EBONY_LEAVES.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 4),
+
+                        new TwoLayersFeatureSize(1, 0, 2)
+                ).build()
+        );
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

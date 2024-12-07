@@ -1,7 +1,9 @@
-// 1.21.1	2024-12-01T16:15:55.4708804	Recipes
+// 1.21.1	2024-12-07T20:03:56.2765741	Recipes
 0749993b594946e608ff6b786469736ca688bc6e data/neoforge_tutorial/advancement/recipes/building_blocks/black_opal_slab.json
 580ad48f6f5de7340c3abe794fdb2283eb0cc6e5 data/neoforge_tutorial/advancement/recipes/building_blocks/black_opal_stairs.json
 699283c8e80529fbe73151679bd17ac4f01da7ba data/neoforge_tutorial/advancement/recipes/building_blocks/black_opal_wall.json
+e4e02cb07fada0fb3101b9c3332bcf7ec1fdf9ab data/neoforge_tutorial/advancement/recipes/building_blocks/ebony_planks.json
+c555454821c201cb5a2ca58d91094d2886df7e9b data/neoforge_tutorial/advancement/recipes/building_blocks/ebony_wood.json
 c9d36d43136539ec58682aa3a7dda570ac6c6180 data/neoforge_tutorial/advancement/recipes/combat/black_opal_boots.json
 d39630c47d31bc777e9b17b645521558f05b331d data/neoforge_tutorial/advancement/recipes/combat/black_opal_chestplate.json
 a965001709694714e1be014f583273f8bc356e33 data/neoforge_tutorial/advancement/recipes/combat/black_opal_helmet.json
@@ -62,4 +64,6 @@ de345cf0b4bc1c2177848017cd173a9bc79fa572 data/neoforge_tutorial/recipe/black_opa
 4fbca9d778a059113801e8b810b198b39f5dd244 data/neoforge_tutorial/recipe/black_opal_sword.json
 538d7c5f20f24787f935c96da5a776048a4c5465 data/neoforge_tutorial/recipe/black_opal_trapdoor.json
 d10433c5617ce2c7351a0e6dafc265ee3eb91b45 data/neoforge_tutorial/recipe/black_opal_wall.json
+e0cc5c43cd31fc1331a57f8e4ee209b731b28807 data/neoforge_tutorial/recipe/ebony_planks.json
+bb3e480f980c5cbee5c5b188751766c6d586d8f5 data/neoforge_tutorial/recipe/ebony_wood.json
 99c6f557ce0f27e7bb78942985fbb07e2482fa1a data/neoforge_tutorial/recipe/kaupen.json

@@ -1,3 +1,6 @@
-// 1.21.1	2024-12-01T16:15:55.4749473	Registries
+// 1.21.1	2024-12-07T20:49:58.6248568	Registries
+d0ed93877140348d660a43300aa439964dd900e8 data/neoforge_tutorial/neoforge/biome_modifier/add_tree_ebony.json
 8eb30cf0058a9c65d9efd7a4dcfc110789db49a8 data/neoforge_tutorial/trim_material/black_opal.json
 6294ea398c68d207f77959ff2d60b851eb507c1b data/neoforge_tutorial/trim_pattern/kaupen.json
+30ff4cc6157ba6486696dedcee53a4532d98ab1a data/neoforge_tutorial/worldgen/configured_feature/ebony.json
+7bd2e01c4a47fe5d4501abfbda2ede52bb910da6 data/neoforge_tutorial/worldgen/placed_feature/ebony_placed.json

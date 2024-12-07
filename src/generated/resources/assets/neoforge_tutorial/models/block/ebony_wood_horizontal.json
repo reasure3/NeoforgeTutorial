@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "neoforge_tutorial:block/ebony_log",
+    "side": "neoforge_tutorial:block/ebony_log"
+  }
+}

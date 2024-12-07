@@ -1,6 +1,7 @@
 package com.reasure.neoforge_tutorial.datagen;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
+import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -82,5 +83,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.TRIM_TEMPLATES)
                 .add(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
+
+        copy(ModTags.Blocks.EBONY_LOGS, ModTags.Items.EBONY_LOGS);
+        tag(ItemTags.LOGS_THAT_BURN)
+                .addTag(ModTags.Items.EBONY_LOGS);
+        tag(Tags.Items.STRIPPED_LOGS)
+                .add(ModBlocks.STRIPPED_EBONY_LOG.asItem());
+        tag(Tags.Items.STRIPPED_WOODS)
+                .add(ModBlocks.STRIPPED_EBONY_WOOD.asItem());
+        tag(ItemTags.PLANKS)
+                .add(ModBlocks.EBONY_PLANKS.asItem());
     }
 }

@@ -60,6 +60,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.TOMATO_CROP.get(), block -> createCropDrops(block, ModItems.TOMATO.get(), ModItems.TOMATO_SEEDS.get(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TomatoCropBlock.AGE, 5))));
+
+        dropSelf(ModBlocks.EBONY_LOG.get());
+        dropSelf(ModBlocks.EBONY_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_EBONY_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_EBONY_WOOD.get());
+        dropSelf(ModBlocks.EBONY_PLANKS.get());
+        dropSelf(ModBlocks.EBONY_SAPLING.get());
+
+        add(ModBlocks.EBONY_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.EBONY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float minDrops, float maxDrops) {

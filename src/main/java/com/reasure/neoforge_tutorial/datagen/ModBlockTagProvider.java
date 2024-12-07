@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
@@ -66,5 +67,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.FENCES).add(ModBlocks.BLACK_OPAL_FENCE.get());
         tag(BlockTags.FENCE_GATES).add(ModBlocks.BLACK_OPAL_FENCE_GATE.get());
         tag(BlockTags.WALLS).add(ModBlocks.BLACK_OPAL_WALL.get());
+
+        tag(ModTags.Blocks.EBONY_LOGS)
+                .add(ModBlocks.EBONY_LOG.get())
+                .add(ModBlocks.STRIPPED_EBONY_LOG.get())
+                .add(ModBlocks.EBONY_WOOD.get())
+                .add(ModBlocks.STRIPPED_EBONY_WOOD.get());
+        tag(BlockTags.LOGS_THAT_BURN)
+                .addTag(ModTags.Blocks.EBONY_LOGS);
+        tag(Tags.Blocks.STRIPPED_LOGS)
+                .add(ModBlocks.STRIPPED_EBONY_LOG.get());
+        tag(Tags.Blocks.STRIPPED_WOODS)
+                .add(ModBlocks.STRIPPED_EBONY_WOOD.get());
     }
 }

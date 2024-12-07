@@ -1,5 +1,6 @@
 package com.reasure.neoforge_tutorial;
 
+import com.google.common.collect.ImmutableMap;
 import com.mojang.logging.LogUtils;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
@@ -10,7 +11,9 @@ import com.reasure.neoforge_tutorial.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -25,6 +28,8 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
+import java.util.Map;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(NeoforgeTutorial.MODID)
 public class NeoforgeTutorial {
@@ -32,6 +37,8 @@ public class NeoforgeTutorial {
     public static final String MODID = "neoforge_tutorial";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
+
+    public static Map<Block, Block> STRIPPABLES = Map.of();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -68,6 +75,19 @@ public class NeoforgeTutorial {
         LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
 
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
+
+        FireBlock fire = (FireBlock) Blocks.FIRE;
+        fire.setFlammable(ModBlocks.EBONY_LOG.get(), 5, 5);
+        fire.setFlammable(ModBlocks.EBONY_WOOD.get(), 5, 5);
+        fire.setFlammable(ModBlocks.STRIPPED_EBONY_LOG.get(), 5, 5);
+        fire.setFlammable(ModBlocks.STRIPPED_EBONY_WOOD.get(), 5, 5);
+        fire.setFlammable(ModBlocks.EBONY_PLANKS.get(), 5, 20);
+        fire.setFlammable(ModBlocks.EBONY_LEAVES.get(), 30, 60);
+
+        STRIPPABLES = new ImmutableMap.Builder<Block, Block>()
+                .put(ModBlocks.EBONY_LOG.get(), ModBlocks.STRIPPED_EBONY_LOG.get())
+                .put(ModBlocks.EBONY_WOOD.get(), ModBlocks.STRIPPED_EBONY_WOOD.get())
+                .build();
     }
 
     // Add the example block item to the building blocks tab

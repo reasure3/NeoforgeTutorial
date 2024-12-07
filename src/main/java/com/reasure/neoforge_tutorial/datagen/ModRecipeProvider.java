@@ -3,6 +3,7 @@ package com.reasure.neoforge_tutorial.datagen;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.item.ModItems;
+import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -134,6 +135,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput);
 
         trimSmithing(recipeOutput, ModItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "kaupen"));
+
+        planksFromLogs(recipeOutput, ModBlocks.EBONY_PLANKS.get(), ModTags.Items.EBONY_LOGS, 4);
+        woodFromLogs(recipeOutput, ModBlocks.EBONY_WOOD.get(), ModBlocks.EBONY_LOG.get());
     }
 
     protected static void oreSmelting(@NotNull RecipeOutput recipeOutput, List<ItemLike> ingredients, @NotNull RecipeCategory category, @NotNull ItemLike result,

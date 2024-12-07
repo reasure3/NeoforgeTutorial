@@ -82,6 +82,14 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.MAGIC_BLOCK);
 
                         output.accept(ModBlocks.BLACK_OPAL_LAMP);
+
+                        output.accept(ModBlocks.EBONY_LOG);
+                        output.accept(ModBlocks.STRIPPED_EBONY_LOG);
+                        output.accept(ModBlocks.EBONY_WOOD);
+                        output.accept(ModBlocks.STRIPPED_EBONY_WOOD);
+                        output.accept(ModBlocks.EBONY_LEAVES);
+                        output.accept(ModBlocks.EBONY_SAPLING);
+                        output.accept(ModBlocks.EBONY_PLANKS);
                     }).build());
 
     public static void register(IEventBus eventBus) {

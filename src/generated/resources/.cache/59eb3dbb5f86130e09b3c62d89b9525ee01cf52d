@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-05T13:55:16.9669642	Loot Tables
+// 1.21.1	2024-12-07T20:03:56.2740213	Loot Tables
 7e943b5a59e8ce9852d8f8c6ce9bae66fb0c74a9 data/neoforge_tutorial/loot_table/blocks/black_opal_block.json
 22e07db84d9a4f603a956e0b4628cd21341c33b0 data/neoforge_tutorial/loot_table/blocks/black_opal_button.json
 6cb744458d148ebe68eee0ef606ca0d5b4091bfc data/neoforge_tutorial/loot_table/blocks/black_opal_deepslate_ore.json
@@ -14,5 +14,12 @@ d572e4778f5ab64762617270b369a25197cb8960 data/neoforge_tutorial/loot_table/block
 26c13716662cf5fc4725c4004dac3b5b44e20160 data/neoforge_tutorial/loot_table/blocks/black_opal_stairs.json
 b927335c9b3314d0c8368fbf214c26f4ead05a51 data/neoforge_tutorial/loot_table/blocks/black_opal_trapdoor.json
 bf5e112917aedb93f5442b9fd9145b90e8c00105 data/neoforge_tutorial/loot_table/blocks/black_opal_wall.json
+76a5f2d9fe6f0ade2fdce57099d78d948e670bf0 data/neoforge_tutorial/loot_table/blocks/ebony_leaves.json
+8e0227f60195453cf38a4bbd86c3682dbbbc290b data/neoforge_tutorial/loot_table/blocks/ebony_log.json
+b6782c72ac91baae1879b20a916f753ffe8404ee data/neoforge_tutorial/loot_table/blocks/ebony_planks.json
+885e0cfefaf1339601cfbe90c6528ce9b7ac7b60 data/neoforge_tutorial/loot_table/blocks/ebony_sapling.json
+52dc1ddc05fef78c2dc7c5588be45abd4302c093 data/neoforge_tutorial/loot_table/blocks/ebony_wood.json
 bc0db8c9f24bfc2ce2456fa3ec98ee6c7cac78eb data/neoforge_tutorial/loot_table/blocks/raw_black_opal_block.json
+ca89e3da3638c300d332f657f68dacc1d8255f0b data/neoforge_tutorial/loot_table/blocks/stripped_ebony_log.json
+60090b36846ecccfd222e9049ae3bd317eb96c26 data/neoforge_tutorial/loot_table/blocks/stripped_ebony_wood.json
 feed755e8c7000179047d45c244e996f0e141de2 data/neoforge_tutorial/loot_table/blocks/tomato_crop.json
