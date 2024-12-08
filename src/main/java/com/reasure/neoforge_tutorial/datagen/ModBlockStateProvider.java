@@ -52,6 +52,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         makeCrop((CropBlock) ModBlocks.TOMATO_CROP.get(), TomatoCropBlock.AGE, "tomato_crop_stage", "tomato_crop_stage");
 
+        leavesBlock(ModBlocks.COLORED_LEAVES);
+
         makeTree(ModBlocks.EBONY_LOG, ModBlocks.EBONY_WOOD, ModBlocks.STRIPPED_EBONY_LOG, ModBlocks.STRIPPED_EBONY_WOOD);
         blockWithItem(ModBlocks.EBONY_PLANKS);
         leavesBlock(ModBlocks.EBONY_LEAVES);

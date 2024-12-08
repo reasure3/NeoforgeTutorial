@@ -71,6 +71,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModBlocks.TOMATO_CROP.get(), "Tomato Crop");
 
+        add(ModBlocks.COLORED_LEAVES.get(), "Colored Leaves");
+
         add(ModBlocks.EBONY_LOG.get(), "Ebony Log");
         add(ModBlocks.EBONY_PLANKS.get(), "Ebony Planks");
         add(ModBlocks.EBONY_WOOD.get(), "Ebony Wood");

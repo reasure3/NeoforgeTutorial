@@ -74,6 +74,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TOMATO_CROP = BLOCKS.register("tomato_crop",
             () -> new TomatoCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
+    // Just Example of Colored Block.
+    public static final DeferredBlock<Block> COLORED_LEAVES = registerBlock("colored_leaves",
+            () -> new Block(BlockBehaviour.Properties.of().noOcclusion().noLootTable()));
+
     public static final DeferredBlock<Block> EBONY_LOG = registerBlock("ebony_log",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
     public static final DeferredBlock<Block> EBONY_WOOD = registerBlock("ebony_wood",
