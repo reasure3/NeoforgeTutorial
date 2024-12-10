@@ -61,6 +61,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TomatoCropBlock.AGE, 5))));
 
+        dropSelf(ModBlocks.PETUNIA.get());
+        add(ModBlocks.POTTED_PETUNIA.get(), createPotFlowerItemTable(ModBlocks.PETUNIA));
+
         dropSelf(ModBlocks.EBONY_LOG.get());
         dropSelf(ModBlocks.EBONY_WOOD.get());
         dropSelf(ModBlocks.STRIPPED_EBONY_LOG.get());

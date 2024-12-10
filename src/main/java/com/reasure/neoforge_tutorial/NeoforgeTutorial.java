@@ -19,6 +19,7 @@ import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -83,18 +84,22 @@ public class NeoforgeTutorial {
 
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
 
-        FireBlock fire = (FireBlock) Blocks.FIRE;
-        fire.setFlammable(ModBlocks.EBONY_LOG.get(), 5, 5);
-        fire.setFlammable(ModBlocks.EBONY_WOOD.get(), 5, 5);
-        fire.setFlammable(ModBlocks.STRIPPED_EBONY_LOG.get(), 5, 5);
-        fire.setFlammable(ModBlocks.STRIPPED_EBONY_WOOD.get(), 5, 5);
-        fire.setFlammable(ModBlocks.EBONY_PLANKS.get(), 5, 20);
-        fire.setFlammable(ModBlocks.EBONY_LEAVES.get(), 30, 60);
+        event.enqueueWork(() -> {
+            FireBlock fire = (FireBlock) Blocks.FIRE;
+            fire.setFlammable(ModBlocks.EBONY_LOG.get(), 5, 5);
+            fire.setFlammable(ModBlocks.EBONY_WOOD.get(), 5, 5);
+            fire.setFlammable(ModBlocks.STRIPPED_EBONY_LOG.get(), 5, 5);
+            fire.setFlammable(ModBlocks.STRIPPED_EBONY_WOOD.get(), 5, 5);
+            fire.setFlammable(ModBlocks.EBONY_PLANKS.get(), 5, 20);
+            fire.setFlammable(ModBlocks.EBONY_LEAVES.get(), 30, 60);
 
-        STRIPPABLES = new ImmutableMap.Builder<Block, Block>()
-                .put(ModBlocks.EBONY_LOG.get(), ModBlocks.STRIPPED_EBONY_LOG.get())
-                .put(ModBlocks.EBONY_WOOD.get(), ModBlocks.STRIPPED_EBONY_WOOD.get())
-                .build();
+            STRIPPABLES = new ImmutableMap.Builder<Block, Block>()
+                    .put(ModBlocks.EBONY_LOG.get(), ModBlocks.STRIPPED_EBONY_LOG.get())
+                    .put(ModBlocks.EBONY_WOOD.get(), ModBlocks.STRIPPED_EBONY_WOOD.get())
+                    .build();
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.PETUNIA.getId(), ModBlocks.POTTED_PETUNIA);
+        });
     }
 
     // Add the example block item to the building blocks tab

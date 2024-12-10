@@ -83,6 +83,8 @@ public class ModCreativeTabs {
 
                         output.accept(ModBlocks.BLACK_OPAL_LAMP);
 
+                        output.accept(ModBlocks.PETUNIA);
+
                         output.accept(ModBlocks.COLORED_LEAVES);
 
                         output.accept(ModBlocks.EBONY_LOG);

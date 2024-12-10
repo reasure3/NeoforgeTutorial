@@ -52,6 +52,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         makeCrop((CropBlock) ModBlocks.TOMATO_CROP.get(), TomatoCropBlock.AGE, "tomato_crop_stage", "tomato_crop_stage");
 
+        simpleBlock(ModBlocks.PETUNIA.get(), models().cross("petunia", blockTexture(ModBlocks.PETUNIA.get())).renderType("cutout"));
+        blockTextureItem(ModBlocks.PETUNIA);
+        simpleBlock(ModBlocks.POTTED_PETUNIA.get(), models().singleTexture("potted_petunia", ResourceLocation.parse("flower_pot_cross"),
+                "plant", blockTexture(ModBlocks.PETUNIA.get())).renderType("cutout"));
+
         leavesBlock(ModBlocks.COLORED_LEAVES);
 
         makeTree(ModBlocks.EBONY_LOG, ModBlocks.EBONY_WOOD, ModBlocks.STRIPPED_EBONY_LOG, ModBlocks.STRIPPED_EBONY_WOOD);
@@ -176,5 +181,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
     public void blockParentItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock, String key, String type) {
         itemModels().withExistingParent(block.getId().getPath(), mcLoc("block/" + type))
                 .texture(key, blockTexture(baseBlock.get()));
+    }
+
+    public void blockTextureItem(DeferredBlock<Block> block) {
+        itemModels().withExistingParent(block.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", blockTexture(block.get()));
     }
 }
