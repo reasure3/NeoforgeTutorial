@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:flower_forest"
+  ],
+  "features": "neoforge_tutorial:petunia_placed",
+  "step": "vegetal_decoration"
+}
