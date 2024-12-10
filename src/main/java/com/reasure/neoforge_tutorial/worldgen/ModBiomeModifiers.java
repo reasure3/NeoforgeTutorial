@@ -25,6 +25,8 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_PETUNIA = registerKey("add_petunia");
 
+    public static final ResourceKey<BiomeModifier> ADD_BLACK_OPAL_GEODE = registerKey("add_black_opal_geode");
+
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeature = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -57,6 +59,12 @@ public class ModBiomeModifiers {
                 HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.FLOWER_FOREST)),
                 HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.PETUNIA_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+
+        context.register(ADD_BLACK_OPAL_GEODE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.BLACK_OPAL_GEODE_PLACED_KEY)),
+                GenerationStep.Decoration.LOCAL_MODIFICATIONS
         ));
     }
 
