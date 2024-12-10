@@ -18,6 +18,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_EBONY = registerKey("add_tree_ebony");
+    public static final ResourceKey<BiomeModifier> ADD_NETHER_TREE_EBONY = registerKey("add_nether_tree_ebony");
 
     public static final ResourceKey<BiomeModifier> ADD_BLACK_OPAL_ORE = registerKey("add_black_opal_ore");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_BLACK_OPAL_ORE = registerKey("add_nether_black_opal_ore");
@@ -34,6 +35,12 @@ public class ModBiomeModifiers {
         context.register(ADD_TREE_EBONY, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_DECIDUOUS_TREE),
                 HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.EBONY_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+
+        context.register(ADD_NETHER_TREE_EBONY, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_NETHER),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.NETHER_EBONY_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 

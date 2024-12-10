@@ -31,6 +31,7 @@ import java.util.List;
 // Tree (How look)     -> How many? Where to place? etc... -> Should I place the feature?
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_EBONY_KEY = registerKey("nether_ebony");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_BLACK_OPAL_ORE_KEY = registerKey("black_opal_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_BLACK_OPAL_ORE_KEY = registerKey("nether_black_opal_ore");
@@ -50,6 +51,19 @@ public class ModConfiguredFeatures {
 
                         new TwoLayersFeatureSize(1, 0, 2)
                 ).build()
+        );
+
+        register(context, NETHER_EBONY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.EBONY_LOG.get()),
+                        new StraightTrunkPlacer(4, 5, 3),
+
+                        BlockStateProvider.simple(ModBlocks.EBONY_LEAVES.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 4),
+
+                        new TwoLayersFeatureSize(1, 0, 2)
+                )
+                        .dirt(BlockStateProvider.simple(Blocks.NETHERRACK))
+                        .build()
         );
 
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);

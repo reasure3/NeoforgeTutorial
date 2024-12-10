@@ -3,6 +3,7 @@ package com.reasure.neoforge_tutorial.block;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.custom.BlackOpalLampBlock;
 import com.reasure.neoforge_tutorial.block.custom.MagicBlock;
+import com.reasure.neoforge_tutorial.block.custom.ModSaplingBlock;
 import com.reasure.neoforge_tutorial.block.custom.TomatoCropBlock;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.worldgen.tree.ModTreeGrowers;
@@ -97,7 +98,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> EBONY_LEAVES = registerBlock("ebony_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
     public static final DeferredBlock<Block> EBONY_SAPLING = registerBlock("ebony_sapling",
-            () -> new SaplingBlock(ModTreeGrowers.EBONY, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+            () -> new ModSaplingBlock(ModTreeGrowers.EBONY, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

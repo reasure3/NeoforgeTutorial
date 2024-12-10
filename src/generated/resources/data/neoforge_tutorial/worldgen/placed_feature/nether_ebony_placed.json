@@ -1,0 +1,40 @@
+{
+  "feature": "neoforge_tutorial:nether_ebony",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 1,
+              "min_inclusive": 0
+            },
+            "weight": 9
+          },
+          {
+            "data": 3,
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "neoforge_tutorial:ebony_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}

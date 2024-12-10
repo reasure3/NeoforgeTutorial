@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_nether",
+  "features": "neoforge_tutorial:nether_ebony_placed",
+  "step": "vegetal_decoration"
+}
