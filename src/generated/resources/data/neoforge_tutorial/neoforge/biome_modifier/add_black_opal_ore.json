@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_overworld",
+  "features": "neoforge_tutorial:black_opal_ore_placed",
+  "step": "underground_ores"
+}
