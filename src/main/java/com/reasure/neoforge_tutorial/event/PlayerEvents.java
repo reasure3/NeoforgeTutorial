@@ -1,6 +1,7 @@
 package com.reasure.neoforge_tutorial.event;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
+import com.reasure.neoforge_tutorial.command.HomeCommand;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.item.custom.HammerItem;
 import net.minecraft.core.BlockPos;
@@ -22,8 +23,11 @@ import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.server.command.ConfigCommand;
 
 @EventBusSubscriber(modid = NeoforgeTutorial.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class PlayerEvents {
@@ -77,5 +81,17 @@ public class PlayerEvents {
                 event.setFinalState(block.defaultBlockState().setValue(RotatedPillarBlock.AXIS, original.getValue(RotatedPillarBlock.AXIS)));
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void registerCommands(final RegisterCommandsEvent event) {
+        HomeCommand.register(event.getDispatcher());
+
+        ConfigCommand.register(event.getDispatcher());
+    }
+
+    @SubscribeEvent
+    public static void onPlayerCloned(PlayerEvent.Clone event) {
+        HomeCommand.saveHome(event.getEntity(), HomeCommand.getHome(event.getOriginal()));
     }
 }
