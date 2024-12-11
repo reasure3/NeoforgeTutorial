@@ -1,0 +1,14 @@
+{
+  "chainsaw_cut": {
+    "sounds": [
+      "neoforge_tutorial:chainsaw_cut"
+    ],
+    "subtitle": "sounds.neoforge_tutorial.chainsaw_cut"
+  },
+  "chainsaw_pull": {
+    "sounds": [
+      "neoforge_tutorial:chainsaw_pull"
+    ],
+    "subtitle": "sounds.neoforge_tutorial.chainsaw_cut"
+  }
+}

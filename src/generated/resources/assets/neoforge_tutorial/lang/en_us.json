@@ -52,6 +52,8 @@
   "item.neoforge_tutorial.tomato_seeds": "Tomato Seeds",
   "itemGroup.neoforge_tutorial.black_opal_blocks_tab": "Black Opal Blocks",
   "itemGroup.neoforge_tutorial.black_opal_items_tab": "Black Opal Items",
+  "sounds.neoforge_tutorial.chainsaw_cut": "Chainsaw Cutting Sound",
+  "sounds.neoforge_tutorial.chainsaw_pull": "Chainsaw Pulling Sound",
   "tooltip.neoforge_tutorial.chainsaw.tooltip.1": "This chainsaw is awesome and will cut down trees!",
   "tooltip.neoforge_tutorial.chainsaw.tooltip.2": "§oChainsaw go vroom!§r",
   "tooltip.neoforge_tutorial.chainsaw.tooltip.shift": "Press §eShift§r for more Information!",

@@ -97,5 +97,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add("trim_material.neoforge_tutorial.black_opal", "Black Opal Material");
 
         add("item.neoforge_tutorial.metal_detector.no_valuables", "No Valuables Found");
+
+        add("sounds." + NeoforgeTutorial.MODID + ".chainsaw_cut", "Chainsaw Cutting Sound");
+        add("sounds." + NeoforgeTutorial.MODID + ".chainsaw_pull", "Chainsaw Pulling Sound");
     }
 }

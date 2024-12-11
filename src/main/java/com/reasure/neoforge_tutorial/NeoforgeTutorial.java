@@ -8,6 +8,7 @@ import com.reasure.neoforge_tutorial.item.ModArmorMaterials;
 import com.reasure.neoforge_tutorial.item.ModCreativeTabs;
 import com.reasure.neoforge_tutorial.item.ModItemProperties;
 import com.reasure.neoforge_tutorial.item.ModItems;
+import com.reasure.neoforge_tutorial.sound.ModSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
@@ -57,6 +58,8 @@ public class NeoforgeTutorial {
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModSounds.register(modEventBus);
 
         ModDataComponentTypes.register(modEventBus);
 

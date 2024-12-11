@@ -1,11 +1,13 @@
 package com.reasure.neoforge_tutorial.item.custom;
 
 import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
+import com.reasure.neoforge_tutorial.sound.ModSounds;
 import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -34,12 +36,21 @@ public class ChainsawItem extends Item {
                 context.getItemInHand().hurtAndBreak(1, (ServerLevel) level, ((ServerPlayer) context.getPlayer()),
                         item -> Objects.requireNonNull(context.getPlayer()).onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
+                // player 부분 의미 (첫번째 파라미터)
+                // ServerLevel -> 해당 플레이어 제외하고 전체 발송
+                // ClientLevel -> 클라이언트의 플레이어와 전달받은 플레이어가 같을 경우에만 해당 플레이어만 제생. 그 외는 재생하지 않음
+                context.getLevel().playSound(null, context.getPlayer().blockPosition(), ModSounds.CHAINSAW_CUT.get(), SoundSource.PLAYERS, 1f, 1f);
+
                 context.getItemInHand().set(ModDataComponentTypes.COORDINATES, context.getClickedPos());
             }
             return InteractionResult.sidedSuccess(level.isClientSide());
         }
 
-        return InteractionResult.PASS;
+        if (!level.isClientSide()) {
+            context.getLevel().playSound(null, context.getPlayer().blockPosition(), ModSounds.CHAINSAW_PULL.get(), SoundSource.PLAYERS, 1f, 1f);
+            return InteractionResult.FAIL;
+        }
+        return InteractionResult.CONSUME;
     }
 
     @Override
