@@ -44,6 +44,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModItems.TOMATO_SEEDS.get(), "Tomato Seeds");
 
+        add(ModItems.BAR_BRAWL_MUSIC_DISC.get(), "Bar Brawl Music Disc");
+
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
@@ -100,5 +102,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add("sounds." + NeoforgeTutorial.MODID + ".chainsaw_cut", "Chainsaw Cutting Sound");
         add("sounds." + NeoforgeTutorial.MODID + ".chainsaw_pull", "Chainsaw Pulling Sound");
+        add("jukebox_song." + NeoforgeTutorial.MODID + ".bar_brawl", "Bar Brawl");
+        add("item." + NeoforgeTutorial.MODID + ".bar_brawl_music_disc.desc", "Bryan Tech - Bar Brawl (CC0)");
     }
 }

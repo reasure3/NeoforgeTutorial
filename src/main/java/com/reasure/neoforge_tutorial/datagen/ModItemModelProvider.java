@@ -70,6 +70,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         bowItem(ModItems.KAUPEN_BOW);
 
         basicItem(ModItems.TOMATO_SEEDS.get());
+
+        basicItem(ModItems.BAR_BRAWL_MUSIC_DISC.get());
     }
 
     private void handheldItem(DeferredItem<Item> item) {

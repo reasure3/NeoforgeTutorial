@@ -43,5 +43,9 @@ public class ModSoundDefinitionsProvider extends SoundDefinitionsProvider {
                 .with(sound(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "magic_block_fall")))
                 .subtitle("subtitles.block.generic.fall")
         );
+        add(ModSounds.BAR_BRAWL, SoundDefinition.definition()
+                .with(sound(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "bar_brawl")).stream())
+                .subtitle("jukebox_song." + NeoforgeTutorial.MODID + ".bar_brawl")
+        );
     }
 }

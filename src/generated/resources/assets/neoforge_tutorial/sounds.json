@@ -1,4 +1,13 @@
 {
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "neoforge_tutorial:bar_brawl",
+        "stream": true
+      }
+    ],
+    "subtitle": "jukebox_song.neoforge_tutorial.bar_brawl"
+  },
   "chainsaw_cut": {
     "sounds": [
       "neoforge_tutorial:chainsaw_cut"
