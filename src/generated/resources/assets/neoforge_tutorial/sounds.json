@@ -10,5 +10,35 @@
       "neoforge_tutorial:chainsaw_pull"
     ],
     "subtitle": "sounds.neoforge_tutorial.chainsaw_cut"
+  },
+  "magic_block_break": {
+    "sounds": [
+      "neoforge_tutorial:magic_block_break"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "magic_block_fall": {
+    "sounds": [
+      "neoforge_tutorial:magic_block_fall"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "magic_block_hit": {
+    "sounds": [
+      "neoforge_tutorial:magic_block_hit"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "magic_block_place": {
+    "sounds": [
+      "neoforge_tutorial:magic_block_place"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "magic_block_step": {
+    "sounds": [
+      "neoforge_tutorial:magic_block_step"
+    ],
+    "subtitle": "subtitles.block.generic.step"
   }
 }

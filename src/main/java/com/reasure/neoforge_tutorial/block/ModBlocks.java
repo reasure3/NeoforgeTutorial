@@ -6,6 +6,7 @@ import com.reasure.neoforge_tutorial.block.custom.MagicBlock;
 import com.reasure.neoforge_tutorial.block.custom.ModSaplingBlock;
 import com.reasure.neoforge_tutorial.block.custom.TomatoCropBlock;
 import com.reasure.neoforge_tutorial.item.ModItems;
+import com.reasure.neoforge_tutorial.sound.ModSounds;
 import com.reasure.neoforge_tutorial.worldgen.tree.ModTreeGrowers;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -26,28 +27,28 @@ public class ModBlocks {
             DeferredRegister.createBlocks(NeoforgeTutorial.MODID);
 
     public static final DeferredBlock<Block> BLACK_OPAL_BLOCK = registerBlock("black_opal_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> RAW_BLACK_OPAL_BLOCK = registerBlock("raw_black_opal_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK).strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> BLACK_OPAL_ORE = registerBlock("black_opal_ore",
             () -> new DropExperienceBlock(UniformInt.of(2, 5),
-                    BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(4f)));
     public static final DeferredBlock<Block> BLACK_OPAL_DEEPSLATE_ORE = registerBlock("black_opal_deepslate_ore",
             () -> new DropExperienceBlock(UniformInt.of(3, 6),
-                    BlockBehaviour.Properties.of().strength(6f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6f)));
     public static final DeferredBlock<Block> BLACK_OPAL_END_ORE = registerBlock("black_opal_end_ore",
             () -> new DropExperienceBlock(UniformInt.of(3, 8),
-                    BlockBehaviour.Properties.of().strength(5f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).strength(5f)));
     public static final DeferredBlock<Block> BLACK_OPAL_NETHER_ORE = registerBlock("black_opal_nether_ore",
             () -> new DropExperienceBlock(UniformInt.of(1, 7),
-                    BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERRACK).strength(3f)));
 
     public static final DeferredBlock<Block> BLACK_OPAL_STAIRS = registerBlock("black_opal_stairs",
             () -> new StairBlock(BLACK_OPAL_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(BLACK_OPAL_BLOCK.get()).strength(4f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> BLACK_OPAL_SLAB = registerBlock("black_opal_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(BLACK_OPAL_BLOCK.get()).strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> BLACK_OPAL_PRESSURE_PLATE = registerBlock("black_opal_pressure_plate",
             () -> new PressurePlateBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
@@ -67,7 +68,7 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noOcclusion()));
 
     public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
-            () -> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).noLootTable()));
+            () -> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).noLootTable().sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     public static final DeferredBlock<Block> BLACK_OPAL_LAMP = registerBlock("black_opal_lamp",
             () -> new BlackOpalLampBlock(BlockBehaviour.Properties.of().strength(3f)

@@ -23,5 +23,25 @@ public class ModSoundDefinitionsProvider extends SoundDefinitionsProvider {
                 .with(sound(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "chainsaw_pull")))
                 .subtitle("sounds." + NeoforgeTutorial.MODID + ".chainsaw_cut")
         );
+        add(ModSounds.MAGIC_BLOCK_BREAK, SoundDefinition.definition()
+                .with(sound(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "magic_block_break")))
+                .subtitle("subtitles.block.generic.break")
+        );
+        add(ModSounds.MAGIC_BLOCK_STEP, SoundDefinition.definition()
+                .with(sound(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "magic_block_step")))
+                .subtitle("subtitles.block.generic.step")
+        );
+        add(ModSounds.MAGIC_BLOCK_PLACE, SoundDefinition.definition()
+                .with(sound(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "magic_block_place")))
+                .subtitle("subtitles.block.generic.place")
+        );
+        add(ModSounds.MAGIC_BLOCK_HIT, SoundDefinition.definition()
+                .with(sound(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "magic_block_hit")))
+                .subtitle("subtitles.block.generic.hit")
+        );
+        add(ModSounds.MAGIC_BLOCK_FALL, SoundDefinition.definition()
+                .with(sound(ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "magic_block_fall")))
+                .subtitle("subtitles.block.generic.fall")
+        );
     }
 }
