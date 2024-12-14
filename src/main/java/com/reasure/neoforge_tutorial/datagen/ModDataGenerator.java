@@ -37,6 +37,8 @@ public class ModDataGenerator {
 
         generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
 
+        generator.addProvider(event.includeServer(), new ModMusicDiscProvider(packOutput, lookupProvider, existingFileHelper));
+
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput));
