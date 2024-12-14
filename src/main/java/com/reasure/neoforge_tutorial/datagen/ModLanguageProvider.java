@@ -2,6 +2,7 @@ package com.reasure.neoforge_tutorial.datagen;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
+import com.reasure.neoforge_tutorial.effect.ModEffects;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -89,6 +90,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.EBONY_SAPLING.get(), "Ebony Sapling");
 
         add(ModBlocks.PEDESTAL.get(), "Pedestal");
+
+        add(ModEffects.SLiMEY_EFFECT.get(), "Slimey");
 
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.shift", "Press §eShift§r for more Information!");
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.1", "This chainsaw is awesome and will cut down trees!");
