@@ -2,11 +2,16 @@ package com.reasure.neoforge_tutorial.item;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
+import com.reasure.neoforge_tutorial.potion.ModPotions;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionContents;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -54,7 +59,25 @@ public class ModCreativeTabs {
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC);
 
                         output.accept(ModItems.RADIATION_STAFF);
+
+                        makePotions(output, ModPotions.SLIMEY_POTION, ModPotions.LONG_SLIMEY_POTION);
                     }).build());
+
+    @SafeVarargs
+    private static void makePotions(CreativeModeTab.Output output, Holder<Potion>... potions) {
+        for (Holder<Potion> potion : potions) {
+            output.accept(PotionContents.createItemStack(Items.TIPPED_ARROW, potion));
+        }
+        for (Holder<Potion> potion : potions) {
+            output.accept(PotionContents.createItemStack(Items.POTION, potion));
+        }
+        for (Holder<Potion> potion : potions) {
+            output.accept(PotionContents.createItemStack(Items.SPLASH_POTION, potion));
+        }
+        for (Holder<Potion> potion : potions) {
+            output.accept(PotionContents.createItemStack(Items.LINGERING_POTION, potion));
+        }
+    }
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =
             CREATIVE_MODE_TABS.register("black_opal_blocks_tab", () -> CreativeModeTab.builder()
