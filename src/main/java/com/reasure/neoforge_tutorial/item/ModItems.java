@@ -92,7 +92,10 @@ public class ModItems {
             () -> new ItemNameBlockItem(ModBlocks.TOMATO_CROP.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
-            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.BAR_BRAWL_SONG)));
+            () -> new Item(new Item.Properties().stacksTo(1).jukeboxPlayable(ModSounds.BAR_BRAWL_SONG)));
+
+    public static final DeferredItem<Item> RADIATION_STAFF = ITEMS.register("radiation_staff",
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

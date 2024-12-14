@@ -52,6 +52,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.TOMATO_SEEDS);
 
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC);
+
+                        output.accept(ModItems.RADIATION_STAFF);
                     }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =

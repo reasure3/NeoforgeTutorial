@@ -46,6 +46,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModItems.BAR_BRAWL_MUSIC_DISC.get(), "Bar Brawl Music Disc");
 
+        add(ModItems.RADIATION_STAFF.get(), "Radiation Staff");
+
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
 
