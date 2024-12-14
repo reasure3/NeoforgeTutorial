@@ -96,6 +96,8 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.EBONY_LEAVES);
                         output.accept(ModBlocks.EBONY_SAPLING);
                         output.accept(ModBlocks.EBONY_PLANKS);
+
+                        output.accept(ModBlocks.PEDESTAL);
                     }).build());
 
     public static void register(IEventBus eventBus) {

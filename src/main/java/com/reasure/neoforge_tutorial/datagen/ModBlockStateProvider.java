@@ -63,6 +63,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.EBONY_PLANKS);
         leavesBlock(ModBlocks.EBONY_LEAVES);
         saplingBlock(ModBlocks.EBONY_SAPLING);
+
+        customBlockWithItem(ModBlocks.PEDESTAL);
     }
 
     private void makeTree(DeferredBlock<Block> log, DeferredBlock<Block> wood, DeferredBlock<Block> strippedLog, DeferredBlock<Block> strippedWood) {
@@ -120,6 +122,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
+    }
+
+    private void customBlockWithItem(DeferredBlock<Block> deferredBlock) {
+        simpleBlockWithItem(deferredBlock.get(), new ModelFile.UncheckedModelFile(blockTexture(deferredBlock.get())));
     }
 
     private void blockItem(DeferredBlock<Block> deferredBlock) {

@@ -1,10 +1,7 @@
 package com.reasure.neoforge_tutorial.block;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
-import com.reasure.neoforge_tutorial.block.custom.BlackOpalLampBlock;
-import com.reasure.neoforge_tutorial.block.custom.MagicBlock;
-import com.reasure.neoforge_tutorial.block.custom.ModSaplingBlock;
-import com.reasure.neoforge_tutorial.block.custom.TomatoCropBlock;
+import com.reasure.neoforge_tutorial.block.custom.*;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.sound.ModSounds;
 import com.reasure.neoforge_tutorial.worldgen.tree.ModTreeGrowers;
@@ -100,6 +97,9 @@ public class ModBlocks {
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
     public static final DeferredBlock<Block> EBONY_SAPLING = registerBlock("ebony_sapling",
             () -> new ModSaplingBlock(ModTreeGrowers.EBONY, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+    public static final DeferredBlock<Block> PEDESTAL = registerBlock("pedestal",
+            () -> new PedestalBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

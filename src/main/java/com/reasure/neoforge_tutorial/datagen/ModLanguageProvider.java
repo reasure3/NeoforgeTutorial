@@ -86,6 +86,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.EBONY_LEAVES.get(), "Ebony Leaves");
         add(ModBlocks.EBONY_SAPLING.get(), "Ebony Sapling");
 
+        add(ModBlocks.PEDESTAL.get(), "Pedestal");
+
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.shift", "Press §eShift§r for more Information!");
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.1", "This chainsaw is awesome and will cut down trees!");
         add("tooltip.neoforge_tutorial.chainsaw.tooltip.2", "§oChainsaw go vroom!§r");

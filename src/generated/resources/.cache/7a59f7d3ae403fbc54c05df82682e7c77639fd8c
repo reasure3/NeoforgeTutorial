@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-10T19:57:27.2426328	Block States: neoforge_tutorial
+// 1.21.1	2024-12-14T18:24:20.832068	Block States: neoforge_tutorial
 fb5b105af1a0ae0e66faf86cfbc628f494495bf5 assets/neoforge_tutorial/blockstates/black_opal_block.json
 8c09e3df59ec0d258edc5d9f4e0807b547e39eac assets/neoforge_tutorial/blockstates/black_opal_button.json
 698aabae4a438c277caefdbc2182362f5304acb6 assets/neoforge_tutorial/blockstates/black_opal_deepslate_ore.json
@@ -21,6 +21,7 @@ f581044b90af8178d8020e2ba77e0282c66ba433 assets/neoforge_tutorial/blockstates/bl
 bf796c0dce11b0689b86a9ef0c406f05d89d72b9 assets/neoforge_tutorial/blockstates/ebony_sapling.json
 eb749631594885f011a4b2240b1be4ad4128f296 assets/neoforge_tutorial/blockstates/ebony_wood.json
 bdddfcd504aa7f80212e58b3092815262773a5ee assets/neoforge_tutorial/blockstates/magic_block.json
+7f6149fc92421642b8a5b85aa16e9c25b7918c1d assets/neoforge_tutorial/blockstates/pedestal.json
 97d91f4ecffc56fd92064cba31e556ecf76bf041 assets/neoforge_tutorial/blockstates/petunia.json
 f95694fbe1530ea32bdf0ea0ddab8ac0da2cb0f6 assets/neoforge_tutorial/blockstates/potted_petunia.json
 982884a96d1de24b1031b00e3b7af3d81b5fc5ca assets/neoforge_tutorial/blockstates/raw_black_opal_block.json
@@ -107,6 +108,7 @@ a254a823a9a0d5971d07e1cb8ccba977805e4dfa assets/neoforge_tutorial/models/item/eb
 294c41af2aa143abfbcff921d84b9d6ba05736bf assets/neoforge_tutorial/models/item/ebony_sapling.json
 9564ddbdb81db81ade4038d6e06b456c6b650a0c assets/neoforge_tutorial/models/item/ebony_wood.json
 c26768306e2ea249ea8a1d3abfc3859507207e7d assets/neoforge_tutorial/models/item/magic_block.json
+8b8dae1e50700810be0281ef97f58fb72844b0d9 assets/neoforge_tutorial/models/item/pedestal.json
 d70dbb31c42248271f61d491c91fc287922b9c73 assets/neoforge_tutorial/models/item/petunia.json
 ffbe246da746cf00d7807d5e33e32688a3ee5741 assets/neoforge_tutorial/models/item/raw_black_opal_block.json
 7ed25b008c0e55bcb28c595df04ae905c318cbec assets/neoforge_tutorial/models/item/stripped_ebony_log.json
