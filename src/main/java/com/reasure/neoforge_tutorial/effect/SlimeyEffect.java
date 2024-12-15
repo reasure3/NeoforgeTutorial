@@ -20,7 +20,7 @@ public class SlimeyEffect extends MobEffect {
      * @return 엔티티가 블록에 붙어있고, 떨어지는 중이라면 true
      */
     private boolean canApplyEffect(LivingEntity entity) {
-        return entity.horizontalCollision && entity.getDeltaMovement().y < 0.07;
+        return entity.horizontalCollision && entity.getDeltaMovement().y < -0.07;
     }
 
     @Override
