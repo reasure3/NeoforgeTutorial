@@ -14,7 +14,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, NeoforgeTutorial.MODID);
 
-    public static final DeferredHolder<MobEffect, MobEffect> SLiMEY_EFFECT = MOB_EFFECTS.register("slimey",
+    public static final DeferredHolder<MobEffect, MobEffect> SLIMEY_EFFECT = MOB_EFFECTS.register("slimey",
             () -> new SlimeyEffect(MobEffectCategory.NEUTRAL, 0x36EBAB)
                     .addAttributeModifier(Attributes.SAFE_FALL_DISTANCE,
                             ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "slimey"),

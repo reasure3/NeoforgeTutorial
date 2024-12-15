@@ -13,10 +13,10 @@ public class ModPotions {
     public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(BuiltInRegistries.POTION, NeoforgeTutorial.MODID);
 
     public static final DeferredHolder<Potion, Potion> SLIMEY_POTION = POTIONS.register("slimey_potion",
-            () -> new Potion("slimey_potion", new MobEffectInstance(ModEffects.SLiMEY_EFFECT, 3600, 0)));
+            () -> new Potion("slimey_potion", new MobEffectInstance(ModEffects.SLIMEY_EFFECT, 3600, 0)));
 
     public static final DeferredHolder<Potion, Potion> LONG_SLIMEY_POTION = POTIONS.register("long_slimey_potion",
-            () -> new Potion("slimey_potion", new MobEffectInstance(ModEffects.SLiMEY_EFFECT, 9600, 0)));
+            () -> new Potion("slimey_potion", new MobEffectInstance(ModEffects.SLIMEY_EFFECT, 9600, 0)));
 
 
     public static void register(IEventBus eventBus) {

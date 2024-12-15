@@ -5,6 +5,7 @@ import com.reasure.neoforge_tutorial.command.HomeCommand;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.item.custom.HammerItem;
 import com.reasure.neoforge_tutorial.potion.ModPotions;
+import com.reasure.neoforge_tutorial.villager.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -125,6 +126,28 @@ public class PlayerEvents {
                     new ItemCost(Items.EMERALD, 3),
                     new ItemStack(ModItems.TOMATO.get(), 8),
                     8, 4, 0.05f
+            ));
+        }
+
+        if (event.getType() == ModVillagers.KAUPENGER.value()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 19),
+                    new ItemStack(ModItems.CHAINSAW.get(), 1), 1, 9, 0.05f
+            ));
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 6),
+                    new ItemStack(ModItems.FROSTFIRE_ICE.get(), 1), 1, 12, 0.05f
+            ));
+
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 6),
+                    new ItemStack(ModItems.RADIATION_STAFF.get(), 1), 1, 12, 0.05f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.DIAMOND, 32),
+                    new ItemStack(ModItems.BLACK_OPAL.get(), 1), 4, 16, 0.05f
             ));
         }
     }

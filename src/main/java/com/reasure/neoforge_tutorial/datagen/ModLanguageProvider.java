@@ -4,7 +4,7 @@ import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.effect.ModEffects;
 import com.reasure.neoforge_tutorial.item.ModItems;
-import com.reasure.neoforge_tutorial.potion.ModPotions;
+import com.reasure.neoforge_tutorial.villager.ModVillagers;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -92,7 +92,9 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModBlocks.PEDESTAL.get(), "Pedestal");
 
-        add(ModEffects.SLiMEY_EFFECT.get(), "Slimey");
+        add("entity.minecraft.villager.neoforge_tutorial.kaupenger", "Kaupenger");
+
+        add(ModEffects.SLIMEY_EFFECT.get(), "Slimey");
         add("item.minecraft.potion.effect.slimey_potion", "Potion of Slimey");
         add("item.minecraft.splash_potion.effect.slimey_potion", "Splash Potion of Slimey");
         add("item.minecraft.lingering_potion.effect.slimey_potion", "Lingering Potion of Slimey");
