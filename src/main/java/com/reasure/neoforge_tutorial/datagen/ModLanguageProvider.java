@@ -118,5 +118,12 @@ public class ModLanguageProvider extends LanguageProvider {
         add("sounds." + NeoforgeTutorial.MODID + ".chainsaw_pull", "Chainsaw Pulling Sound");
         add("jukebox_song." + NeoforgeTutorial.MODID + ".bar_brawl", "Bar Brawl");
         add("item." + NeoforgeTutorial.MODID + ".bar_brawl_music_disc.desc", "Bryan Tech - Bar Brawl (CC0)");
+
+        add("painting.neoforge_tutorial.world.title", "World");
+        add("painting.neoforge_tutorial.world.author", "NanoAttack");
+        add("painting.neoforge_tutorial.shrimp.title", "Shrimp");
+        add("painting.neoforge_tutorial.shrimp.author", "NanoAttack");
+        add("painting.neoforge_tutorial.saw_them.title", "Saw Them");
+        add("painting.neoforge_tutorial.saw_them.author", "NanoAttack");
     }
 }
