@@ -125,5 +125,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("painting.neoforge_tutorial.shrimp.author", "NanoAttack");
         add("painting.neoforge_tutorial.saw_them.title", "Saw Them");
         add("painting.neoforge_tutorial.saw_them.author", "NanoAttack");
+        add("painting.neoforge_tutorial.wanderer.title", "Wanderer");
+        add("painting.neoforge_tutorial.wanderer.author", "PlatinumG17");
     }
 }
