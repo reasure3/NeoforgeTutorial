@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-12T22:21:24.0545371	Item Models: neoforge_tutorial
+// 1.21.1	2025-01-01T19:44:27.8521255	Item Models: neoforge_tutorial
 7b98fdccb8dcdf2b64ed8b997efbecec77676d38 assets/neoforge_tutorial/models/item/bar_brawl_music_disc.json
 e1f584b1a1f4d834972ce540e10f9893886aa244 assets/neoforge_tutorial/models/item/black_opal.json
 83b5a73da0a934c74c4af1ba13ea539858878eee assets/neoforge_tutorial/models/item/black_opal_axe.json
@@ -53,6 +53,7 @@ b187bc3b802750a9d709f155c3014075fb044835 assets/neoforge_tutorial/models/item/bl
 88755701d87c0de8f5fad4a7d0da03b8cfd2dc1b assets/neoforge_tutorial/models/item/black_opal_pickaxe.json
 c71cf426f8546113409b50e16bf2613babb4d52f assets/neoforge_tutorial/models/item/black_opal_shovel.json
 988d0073e34997f4a1dc1b6fc59d84f73b4635cf assets/neoforge_tutorial/models/item/black_opal_sword.json
+a7507d2fedb2b2328f766f4faf26cda34cf54fbb assets/neoforge_tutorial/models/item/black_opal_water_bucket.json
 6732a652782452a8151718a71b5ed056ca001c79 assets/neoforge_tutorial/models/item/chainsaw.json
 58da00859bc303fb3b7292eebb87bf0162baa292 assets/neoforge_tutorial/models/item/data_tablet.json
 828988158d7fae0b25af7d23534f137ad8a63a61 assets/neoforge_tutorial/models/item/data_tablet_on.json

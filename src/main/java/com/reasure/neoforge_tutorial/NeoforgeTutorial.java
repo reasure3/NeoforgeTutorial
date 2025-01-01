@@ -5,6 +5,9 @@ import com.mojang.logging.LogUtils;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.effect.ModEffects;
+import com.reasure.neoforge_tutorial.fluid.BaseFluidType;
+import com.reasure.neoforge_tutorial.fluid.ModFluidTypes;
+import com.reasure.neoforge_tutorial.fluid.ModFluids;
 import com.reasure.neoforge_tutorial.item.ModArmorMaterials;
 import com.reasure.neoforge_tutorial.item.ModCreativeTabs;
 import com.reasure.neoforge_tutorial.item.ModItemProperties;
@@ -14,6 +17,8 @@ import com.reasure.neoforge_tutorial.sound.ModSounds;
 import com.reasure.neoforge_tutorial.villager.ModVillagers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -35,6 +40,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -72,6 +78,9 @@ public class NeoforgeTutorial {
         ModArmorMaterials.register(modEventBus);
 
         ModVillagers.register(modEventBus);
+
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Neoforge_tutorial) to respond directly to events.
@@ -187,6 +196,16 @@ public class NeoforgeTutorial {
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
             ModItemProperties.addCustomItemProperties();
+            event.enqueueWork(() -> {
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_BLACK_OPAL_WATER.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_BLACK_OPAL_WATER.get(), RenderType.translucent());
+            });
+        }
+
+        @SubscribeEvent
+        public static void onClientExtensions(RegisterClientExtensionsEvent event) {
+            event.registerFluidType(((BaseFluidType) ModFluidTypes.BLACK_OPAL_WATER_FLUID_TYPE.get()).getClientFluidTypeExtensions(),
+                    ModFluidTypes.BLACK_OPAL_WATER_FLUID_TYPE.get());
         }
 
         @SubscribeEvent

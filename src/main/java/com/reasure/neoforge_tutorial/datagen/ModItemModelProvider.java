@@ -1,6 +1,7 @@
 package com.reasure.neoforge_tutorial.datagen;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
+import com.reasure.neoforge_tutorial.fluid.ModFluids;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -72,6 +73,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TOMATO_SEEDS.get());
 
         basicItem(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+
+        basicItem(ModFluids.BLACK_OPAL_WATER_BUCKET.get());
     }
 
     private void handheldItem(DeferredItem<Item> item) {

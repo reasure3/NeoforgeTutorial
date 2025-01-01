@@ -2,6 +2,7 @@ package com.reasure.neoforge_tutorial.item;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
+import com.reasure.neoforge_tutorial.fluid.ModFluids;
 import com.reasure.neoforge_tutorial.potion.ModPotions;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -59,6 +60,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC);
 
                         output.accept(ModItems.RADIATION_STAFF);
+
+                        output.accept(ModFluids.BLACK_OPAL_WATER_BUCKET);
 
                         makePotions(output, ModPotions.SLIMEY_POTION, ModPotions.LONG_SLIMEY_POTION);
                     }).build());

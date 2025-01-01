@@ -3,6 +3,7 @@ package com.reasure.neoforge_tutorial.datagen;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.effect.ModEffects;
+import com.reasure.neoforge_tutorial.fluid.ModFluids;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.villager.ModVillagers;
 import net.minecraft.data.PackOutput;
@@ -49,6 +50,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.BAR_BRAWL_MUSIC_DISC.get(), "Bar Brawl Music Disc");
 
         add(ModItems.RADIATION_STAFF.get(), "Radiation Staff");
+
+        add(ModFluids.BLACK_OPAL_WATER_BUCKET.get(), "Black Opal Water Bucket");
 
         add(ModBlocks.BLACK_OPAL_BLOCK.get(), "Block of Black Opal");
         add(ModBlocks.RAW_BLACK_OPAL_BLOCK.get(), "Block of Raw Black Opal");
