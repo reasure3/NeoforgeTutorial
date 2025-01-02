@@ -4,6 +4,7 @@ import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.sound.ModSounds;
 import com.reasure.neoforge_tutorial.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -40,6 +41,9 @@ public class ChainsawItem extends Item {
                 // ServerLevel -> 해당 플레이어 제외하고 전체 발송
                 // ClientLevel -> 클라이언트의 플레이어와 전달받은 플레이어가 같을 경우에만 해당 플레이어만 제생. 그 외는 재생하지 않음
                 context.getLevel().playSound(null, context.getPlayer().blockPosition(), ModSounds.CHAINSAW_CUT.get(), SoundSource.PLAYERS, 1f, 1f);
+
+                ((ServerLevel) context.getLevel()).sendParticles(ParticleTypes.SMOKE, context.getClickedPos().getX() + 0.5f, context.getClickedPos().getY() + 1.0f, context.getClickedPos().getZ() + 0.5f,
+                        25, 0.0, 0.05, 0.0, 0.15f);
 
                 context.getItemInHand().set(ModDataComponentTypes.COORDINATES, context.getClickedPos());
             }
