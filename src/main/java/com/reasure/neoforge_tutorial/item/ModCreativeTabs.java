@@ -126,6 +126,8 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.EBONY_PLANKS);
 
                         output.accept(ModBlocks.PEDESTAL);
+
+                        output.accept(ModBlocks.CRYSTALLIZER);
                     }).build());
 
     public static void register(IEventBus eventBus) {

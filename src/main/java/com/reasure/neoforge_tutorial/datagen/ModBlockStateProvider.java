@@ -65,6 +65,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         saplingBlock(ModBlocks.EBONY_SAPLING);
 
         customBlockWithItem(ModBlocks.PEDESTAL);
+
+        horizontalBlock(ModBlocks.CRYSTALLIZER.get(), mcLoc("block/blast_furnace_side"), modLoc("block/crystallizer_front"), mcLoc("block/blast_furnace_top"));
+        blockItem(ModBlocks.CRYSTALLIZER);
     }
 
     private void makeTree(DeferredBlock<Block> log, DeferredBlock<Block> wood, DeferredBlock<Block> strippedLog, DeferredBlock<Block> strippedWood) {

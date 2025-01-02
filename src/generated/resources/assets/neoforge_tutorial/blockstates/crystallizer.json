@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "neoforge_tutorial:block/crystallizer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "neoforge_tutorial:block/crystallizer"
+    },
+    "facing=south": {
+      "model": "neoforge_tutorial:block/crystallizer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neoforge_tutorial:block/crystallizer",
+      "y": 270
+    }
+  }
+}

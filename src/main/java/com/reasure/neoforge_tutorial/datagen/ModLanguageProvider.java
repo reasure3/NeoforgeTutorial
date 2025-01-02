@@ -95,6 +95,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModBlocks.PEDESTAL.get(), "Pedestal");
 
+        add(ModBlocks.CRYSTALLIZER.get(), "Crystallizer");
+
         add("entity.minecraft.villager.neoforge_tutorial.kaupenger", "Kaupenger");
 
         add(ModEffects.SLIMEY_EFFECT.get(), "Slimey");

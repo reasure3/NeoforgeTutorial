@@ -74,6 +74,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.EBONY_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.EBONY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         dropSelf(ModBlocks.PEDESTAL.get());
+        dropSelf(ModBlocks.CRYSTALLIZER.get());
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float minDrops, float maxDrops) {
