@@ -3,6 +3,7 @@ package com.reasure.neoforge_tutorial.datagen;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.effect.ModEffects;
+import com.reasure.neoforge_tutorial.enchantment.ModEnchantments;
 import com.reasure.neoforge_tutorial.fluid.ModFluids;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.villager.ModVillagers;
@@ -132,5 +133,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("painting.neoforge_tutorial.saw_them.author", "NanoAttack");
         add("painting.neoforge_tutorial.wanderer.title", "Wanderer");
         add("painting.neoforge_tutorial.wanderer.author", "PlatinumG17");
+
+        add("enchantment.neoforge_tutorial.lightning_striker", "Lightning Striker");
     }
 }

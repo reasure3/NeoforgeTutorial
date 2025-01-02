@@ -5,6 +5,7 @@ import com.mojang.logging.LogUtils;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.effect.ModEffects;
+import com.reasure.neoforge_tutorial.enchantment.ModEnchantmentEffects;
 import com.reasure.neoforge_tutorial.fluid.BaseFluidType;
 import com.reasure.neoforge_tutorial.fluid.ModFluidTypes;
 import com.reasure.neoforge_tutorial.fluid.ModFluids;
@@ -81,6 +82,8 @@ public class NeoforgeTutorial {
 
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+
+        ModEnchantmentEffects.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Neoforge_tutorial) to respond directly to events.
