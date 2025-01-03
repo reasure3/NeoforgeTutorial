@@ -3,6 +3,7 @@ package com.reasure.neoforge_tutorial;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.logging.LogUtils;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
+import com.reasure.neoforge_tutorial.block.entity.ModBlockEntities;
 import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.effect.ModEffects;
 import com.reasure.neoforge_tutorial.enchantment.ModEnchantmentEffects;
@@ -68,6 +69,8 @@ public class NeoforgeTutorial {
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
