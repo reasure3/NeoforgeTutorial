@@ -5,7 +5,6 @@ import com.reasure.neoforge_tutorial.block.entity.custom.PedestalBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -64,26 +63,32 @@ public class PedestalBlock extends BaseEntityBlock {
 
     @Override
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        Containers.dropContentsOnDestroy(state, newState, level, pos);
+        if (state.getBlock() != newState.getBlock()) {
+            if (level.getBlockEntity(pos) instanceof PedestalBlockEntity be) {
+                be.drops();
+                level.updateNeighbourForOutputSignal(pos, this);
+            }
+        }
         super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof PedestalBlockEntity be) {
-            if (be.isEmpty() && !stack.isEmpty()) {
+            boolean pedestalIsEmpty = be.inventory.getStackInSlot(0).isEmpty();
+            if (pedestalIsEmpty && !stack.isEmpty()) {
                 // save item to pedestal
-                be.setItem(0, stack);
+                be.inventory.insertItem(0, stack.copyWithCount(1), false);
                 if (!player.isCreative() && !player.isSpectator()) {
                     stack.shrink(1);
                 }
                 level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
                 return ItemInteractionResult.sidedSuccess(level.isClientSide);
-            } else if (!be.isEmpty() && stack.isEmpty()) {
+            } else if (!pedestalIsEmpty && stack.isEmpty()) {
                 // take item from pedestal
-                ItemStack stackOnPedestal = be.removeItem(0, 1);
+                ItemStack stackOnPedestal = be.inventory.extractItem(0, 1, false);
                 player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPedestal);
-                be.clearContent();
+                be.clearContents();
                 level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
                 return ItemInteractionResult.sidedSuccess(level.isClientSide);
             }
