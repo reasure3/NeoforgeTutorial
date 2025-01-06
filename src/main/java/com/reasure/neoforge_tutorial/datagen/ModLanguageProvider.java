@@ -135,5 +135,6 @@ public class ModLanguageProvider extends LanguageProvider {
         add("enchantment.neoforge_tutorial.lightning_striker", "Lightning Striker");
 
         add("container.neoforge_tutorial.pedestal", "Pedestal");
+        add("container.neoforge_tutorial.crystallizer", "Crystallizer");
     }
 }

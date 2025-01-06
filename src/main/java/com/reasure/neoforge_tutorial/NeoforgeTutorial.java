@@ -6,6 +6,7 @@ import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.block.entity.ModBlockEntities;
 import com.reasure.neoforge_tutorial.block.entity.menu.ModMenuTypes;
 import com.reasure.neoforge_tutorial.client.render.PedestalBlockEntityRenderer;
+import com.reasure.neoforge_tutorial.client.screen.custom.CrystallizerScreen;
 import com.reasure.neoforge_tutorial.client.screen.custom.PedestalScreen;
 import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.effect.ModEffects;
@@ -222,6 +223,7 @@ public class NeoforgeTutorial {
         @SubscribeEvent
         public static void registerScreen(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
+            event.register(ModMenuTypes.CRYSTALLIZER_MENU.get(), CrystallizerScreen::new);
         }
 
         @SubscribeEvent
