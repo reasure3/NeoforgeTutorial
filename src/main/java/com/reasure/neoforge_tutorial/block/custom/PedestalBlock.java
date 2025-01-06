@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
@@ -75,6 +76,13 @@ public class PedestalBlock extends BaseEntityBlock {
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof PedestalBlockEntity be) {
+            if (level.isClientSide()) return ItemInteractionResult.CONSUME;
+
+            if (player.isCrouching()) {
+                player.openMenu(new SimpleMenuProvider(be, be.getDisplayName()), pos);
+                return ItemInteractionResult.SUCCESS;
+            }
+
             boolean pedestalIsEmpty = be.inventory.getStackInSlot(0).isEmpty();
             if (pedestalIsEmpty && !stack.isEmpty()) {
                 // save item to pedestal
@@ -82,15 +90,15 @@ public class PedestalBlock extends BaseEntityBlock {
                 if (!player.isCreative() && !player.isSpectator()) {
                     stack.shrink(1);
                 }
-                level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
-                return ItemInteractionResult.sidedSuccess(level.isClientSide);
+                level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
+                return ItemInteractionResult.SUCCESS;
             } else if (!pedestalIsEmpty && stack.isEmpty()) {
                 // take item from pedestal
                 ItemStack stackOnPedestal = be.inventory.extractItem(0, 1, false);
                 player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPedestal);
                 be.clearContents();
-                level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
-                return ItemInteractionResult.sidedSuccess(level.isClientSide);
+                level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
+                return ItemInteractionResult.SUCCESS;
             }
         }
 

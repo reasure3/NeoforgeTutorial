@@ -4,7 +4,9 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.logging.LogUtils;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.block.entity.ModBlockEntities;
-import com.reasure.neoforge_tutorial.block.entity.renderer.PedestalBlockEntityRenderer;
+import com.reasure.neoforge_tutorial.block.entity.menu.ModMenuTypes;
+import com.reasure.neoforge_tutorial.client.render.PedestalBlockEntityRenderer;
+import com.reasure.neoforge_tutorial.client.screen.custom.PedestalScreen;
 import com.reasure.neoforge_tutorial.component.ModDataComponentTypes;
 import com.reasure.neoforge_tutorial.effect.ModEffects;
 import com.reasure.neoforge_tutorial.enchantment.ModEnchantmentEffects;
@@ -44,6 +46,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -73,6 +76,7 @@ public class NeoforgeTutorial {
         ModBlocks.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
@@ -213,6 +217,11 @@ public class NeoforgeTutorial {
         @SubscribeEvent
         public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerScreen(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
         }
 
         @SubscribeEvent
