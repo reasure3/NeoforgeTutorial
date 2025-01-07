@@ -24,6 +24,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -35,6 +36,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider {
+    private final RecipeManager.CachedCheck<CrystallizingRecipeInput, CrystallizingRecipe> quickCheck;
+
     public final ItemStackHandler inventory = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -94,6 +97,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
                 return 2;
             }
         };
+        this.quickCheck = RecipeManager.createCheck(ModRecipes.CRYSTALLIZING_RECIPE.get());
     }
 
     @Override
@@ -131,8 +135,9 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
-        if (hasRecipe() && isOutputSlotEmptyOrReceivable()) {
-            setMaxCraftingProgress();
+        RecipeHolder<CrystallizingRecipe> recipe = getCurrentRecipe().orElse(null);
+        if (hasRecipe(recipe) && isOutputSlotEmptyOrReceivable()) {
+            setMaxCraftingProgress(recipe);
             increaseCraftingProgress();
             if (!state.getValue(CrystallizerBlock.LIT)) {
                 level.setBlockAndUpdate(pos, state.setValue(CrystallizerBlock.LIT, true));
@@ -140,7 +145,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
             setChanged(level, pos, state);
 
             if (hasCraftingFinished()) {
-                craftItem();
+                craftItem(recipe);
                 resetProgress();
             }
         } else {
@@ -151,9 +156,8 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
         }
     }
 
-    private void setMaxCraftingProgress() {
-        Optional<RecipeHolder<CrystallizingRecipe>> recipe = getCurrentRecipe();
-        this.maxProgress = recipe.get().value().time();
+    private void setMaxCraftingProgress(RecipeHolder<CrystallizingRecipe> recipe) {
+        this.maxProgress = recipe.value().time();
     }
 
     private void resetProgress() {
@@ -161,10 +165,8 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
         this.maxProgress = DEFAULT_MAX_PROGRESS;
     }
 
-    private void craftItem() {
-        Optional<RecipeHolder<CrystallizingRecipe>> recipe = getCurrentRecipe();
-
-        ItemStack output = recipe.get().value().getResultItem(null);
+    private void craftItem(RecipeHolder<CrystallizingRecipe> recipe) {
+        ItemStack output = recipe.value().getResultItem(null);
 
         inventory.extractItem(INPUT_SLOT, 1, false);
         inventory.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(), inventory.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
@@ -183,18 +185,16 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
                 this.inventory.getStackInSlot(OUTPUT_SLOT).getCount() < this.inventory.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
     }
 
-    private boolean hasRecipe() {
-        Optional<RecipeHolder<CrystallizingRecipe>> recipe = getCurrentRecipe();
-        if (recipe.isEmpty()) return false;
+    private boolean hasRecipe(@Nullable RecipeHolder<CrystallizingRecipe> recipe) {
+        if (recipe == null) return false;
 
-        ItemStack output = recipe.get().value().getResultItem(null);
+        ItemStack output = recipe.value().getResultItem(null);
 
         return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
 
     private Optional<RecipeHolder<CrystallizingRecipe>> getCurrentRecipe() {
-        return level.getRecipeManager()
-                .getRecipeFor(ModRecipes.CRYSTALLIZING_RECIPE.get(), new CrystallizingRecipeInput(inventory.getStackInSlot(INPUT_SLOT)), level);
+        return quickCheck.getRecipeFor(new CrystallizingRecipeInput(inventory.getStackInSlot(INPUT_SLOT)), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
