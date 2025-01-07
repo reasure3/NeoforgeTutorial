@@ -8,6 +8,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
@@ -138,6 +139,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         planksFromLogs(recipeOutput, ModBlocks.EBONY_PLANKS.get(), ModTags.Items.EBONY_LOGS, 4);
         woodFromLogs(recipeOutput, ModBlocks.EBONY_WOOD.get(), ModBlocks.EBONY_LOG.get());
+
+        CrystallizingRecipeBuilder.create(Ingredient.of(ModItems.RAW_BLACK_OPAL), ModItems.BLACK_OPAL.get())
+                .group("black_opal")
+                .unlockedBy("has_raw_black_opal", has(ModItems.RAW_BLACK_OPAL))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "black_opal_from_crystallizing"));
+
+        CrystallizingRecipeBuilder.create(Ingredient.of(Tags.Items.RODS_WOODEN), Items.END_ROD, 2)
+                .unlockedBy("has_wooden_rods", has(Tags.Items.RODS_WOODEN))
+                .time(100)
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(NeoforgeTutorial.MODID, "end_rod_from_crystallizing"));
     }
 
     protected static void oreSmelting(@NotNull RecipeOutput recipeOutput, List<ItemLike> ingredients, @NotNull RecipeCategory category, @NotNull ItemLike result,

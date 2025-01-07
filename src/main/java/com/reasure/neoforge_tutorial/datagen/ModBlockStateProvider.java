@@ -9,6 +9,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
@@ -66,7 +67,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         customBlockWithItem(ModBlocks.PEDESTAL);
 
-        horizontalBlock(ModBlocks.CRYSTALLIZER.get(), mcLoc("block/blast_furnace_side"), modLoc("block/crystallizer_front"), mcLoc("block/blast_furnace_top"));
+//        horizontalBlock(ModBlocks.CRYSTALLIZER.get(), mcLoc("block/blast_furnace_side"), modLoc("block/crystallizer_front"), mcLoc("block/blast_furnace_top"));
+        ModelFile crystallizerOn = models().orientable("crystallizer_on", mcLoc("block/blast_furnace_side"), modLoc("block/crystallizer_front_on"), mcLoc("block/blast_furnace_top"));
+        ModelFile crystallizerOff = models().orientable("crystallizer", mcLoc("block/blast_furnace_side"), modLoc("block/crystallizer_front"), mcLoc("block/blast_furnace_top"));
+        horizontalBlock(ModBlocks.CRYSTALLIZER.get(), blockState -> blockState.getValue(BlockStateProperties.LIT) ? crystallizerOn : crystallizerOff);
+
         blockItem(ModBlocks.CRYSTALLIZER);
     }
 

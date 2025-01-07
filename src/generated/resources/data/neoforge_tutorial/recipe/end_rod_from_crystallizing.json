@@ -1,0 +1,11 @@
+{
+  "type": "neoforge_tutorial:crystallizing",
+  "ingredient": {
+    "tag": "c:rods/wooden"
+  },
+  "result": {
+    "count": 2,
+    "id": "minecraft:end_rod"
+  },
+  "time": 100
+}

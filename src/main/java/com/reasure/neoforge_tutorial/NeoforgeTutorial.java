@@ -19,6 +19,7 @@ import com.reasure.neoforge_tutorial.item.ModCreativeTabs;
 import com.reasure.neoforge_tutorial.item.ModItemProperties;
 import com.reasure.neoforge_tutorial.item.ModItems;
 import com.reasure.neoforge_tutorial.potion.ModPotions;
+import com.reasure.neoforge_tutorial.recipe.ModRecipes;
 import com.reasure.neoforge_tutorial.sound.ModSounds;
 import com.reasure.neoforge_tutorial.villager.ModVillagers;
 import net.minecraft.client.Minecraft;
@@ -94,6 +95,8 @@ public class NeoforgeTutorial {
         ModFluids.register(modEventBus);
 
         ModEnchantmentEffects.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Neoforge_tutorial) to respond directly to events.

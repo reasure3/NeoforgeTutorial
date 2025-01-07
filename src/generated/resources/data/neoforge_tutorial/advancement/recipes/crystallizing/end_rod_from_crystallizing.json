@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "neoforge_tutorial:end_rod_from_crystallizing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wooden_rods": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:rods/wooden"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wooden_rods"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "neoforge_tutorial:end_rod_from_crystallizing"
+    ]
+  }
+}

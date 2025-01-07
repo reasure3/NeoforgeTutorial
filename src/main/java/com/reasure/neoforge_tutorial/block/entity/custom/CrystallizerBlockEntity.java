@@ -1,9 +1,13 @@
 package com.reasure.neoforge_tutorial.block.entity.custom;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
+import com.reasure.neoforge_tutorial.block.custom.CrystallizerBlock;
 import com.reasure.neoforge_tutorial.block.entity.ModBlockEntities;
 import com.reasure.neoforge_tutorial.block.entity.menu.custom.CrystallizerMenu;
-import com.reasure.neoforge_tutorial.item.ModItems;
+import com.reasure.neoforge_tutorial.fluid.ModFluidTypes;
+import com.reasure.neoforge_tutorial.recipe.CrystallizingRecipe;
+import com.reasure.neoforge_tutorial.recipe.CrystallizingRecipeInput;
+import com.reasure.neoforge_tutorial.recipe.ModRecipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -19,11 +23,16 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler inventory = new ItemStackHandler(4) {
@@ -33,6 +42,18 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
             if (!level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
+        }
+
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            return switch (slot) {
+                case FLUID_ITEM_SLOT ->
+                        FluidUtil.getFluidContained(stack).map(fluid -> fluid.getFluidType() == ModFluidTypes.BLACK_OPAL_WATER_FLUID_TYPE.get()).orElse(false);
+                case INPUT_SLOT -> true;
+                case OUTPUT_SLOT -> false;
+                case ENERGY_ITEM_SLOT -> stack.getCapability(Capabilities.EnergyStorage.ITEM) != null;
+                default -> super.isItemValid(slot, stack);
+            };
         }
     };
 
@@ -111,7 +132,11 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
 
     public void tick(Level level, BlockPos pos, BlockState state) {
         if (hasRecipe() && isOutputSlotEmptyOrReceivable()) {
+            setMaxCraftingProgress();
             increaseCraftingProgress();
+            if (!state.getValue(CrystallizerBlock.LIT)) {
+                level.setBlockAndUpdate(pos, state.setValue(CrystallizerBlock.LIT, true));
+            }
             setChanged(level, pos, state);
 
             if (hasCraftingFinished()) {
@@ -119,8 +144,16 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
                 resetProgress();
             }
         } else {
+            if (state.getValue(CrystallizerBlock.LIT)) {
+                level.setBlockAndUpdate(pos, state.setValue(CrystallizerBlock.LIT, false));
+            }
             resetProgress();
         }
+    }
+
+    private void setMaxCraftingProgress() {
+        Optional<RecipeHolder<CrystallizingRecipe>> recipe = getCurrentRecipe();
+        this.maxProgress = recipe.get().value().time();
     }
 
     private void resetProgress() {
@@ -129,7 +162,9 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.BLACK_OPAL.get());
+        Optional<RecipeHolder<CrystallizingRecipe>> recipe = getCurrentRecipe();
+
+        ItemStack output = recipe.get().value().getResultItem(null);
 
         inventory.extractItem(INPUT_SLOT, 1, false);
         inventory.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(), inventory.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
@@ -149,11 +184,17 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private boolean hasRecipe() {
-        ItemStack input = new ItemStack(ModItems.RAW_BLACK_OPAL.get());
-        ItemStack output = new ItemStack(ModItems.BLACK_OPAL.get());
+        Optional<RecipeHolder<CrystallizingRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) return false;
 
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) &&
-                this.inventory.getStackInSlot(INPUT_SLOT).is(input.getItem());
+        ItemStack output = recipe.get().value().getResultItem(null);
+
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    }
+
+    private Optional<RecipeHolder<CrystallizingRecipe>> getCurrentRecipe() {
+        return level.getRecipeManager()
+                .getRecipeFor(ModRecipes.CRYSTALLIZING_RECIPE.get(), new CrystallizingRecipeInput(inventory.getStackInSlot(INPUT_SLOT)), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
