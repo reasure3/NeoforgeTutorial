@@ -2,7 +2,7 @@ package com.reasure.neoforge_tutorial.block.entity.custom;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.entity.ModBlockEntities;
-import com.reasure.neoforge_tutorial.block.entity.menu.custom.PedestalMenu;
+import com.reasure.neoforge_tutorial.inventory.menu.custom.PedestalMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;

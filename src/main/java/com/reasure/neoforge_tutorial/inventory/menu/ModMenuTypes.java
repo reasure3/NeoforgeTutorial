@@ -1,8 +1,8 @@
-package com.reasure.neoforge_tutorial.block.entity.menu;
+package com.reasure.neoforge_tutorial.inventory.menu;
 
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
-import com.reasure.neoforge_tutorial.block.entity.menu.custom.CrystallizerMenu;
-import com.reasure.neoforge_tutorial.block.entity.menu.custom.PedestalMenu;
+import com.reasure.neoforge_tutorial.inventory.menu.custom.CrystallizerMenu;
+import com.reasure.neoforge_tutorial.inventory.menu.custom.PedestalMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;

@@ -3,12 +3,14 @@ package com.reasure.neoforge_tutorial.block.entity.custom;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.custom.CrystallizerBlock;
 import com.reasure.neoforge_tutorial.block.entity.ModBlockEntities;
-import com.reasure.neoforge_tutorial.block.entity.menu.custom.CrystallizerMenu;
 import com.reasure.neoforge_tutorial.fluid.ModFluidTypes;
+import com.reasure.neoforge_tutorial.inventory.handler.WrappedItemHandler;
+import com.reasure.neoforge_tutorial.inventory.menu.custom.CrystallizerMenu;
 import com.reasure.neoforge_tutorial.recipe.CrystallizingRecipe;
 import com.reasure.neoforge_tutorial.recipe.CrystallizingRecipeInput;
 import com.reasure.neoforge_tutorial.recipe.ModRecipes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -61,12 +63,15 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
             };
         }
     };
-    public final Lazy<IItemHandler> itemHandler = Lazy.of(() -> inventory);
+    private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> inventory);
+
+    private final Lazy<IItemHandler> inputHandler = Lazy.of(() -> new WrappedItemHandler(inventory, FLUID_ITEM_SLOT, ENERGY_ITEM_SLOT));
+    private final Lazy<IItemHandler> outputHandler = Lazy.of(() -> new WrappedItemHandler(inventory, OUTPUT_SLOT, OUTPUT_SLOT));
 
     private static final int FLUID_ITEM_SLOT = 0;
     private static final int INPUT_SLOT = 1;
-    private static final int OUTPUT_SLOT = 2;
-    private static final int ENERGY_ITEM_SLOT = 3;
+    private static final int ENERGY_ITEM_SLOT = 2;
+    private static final int OUTPUT_SLOT = 3;
 
     private final ContainerData data;
     private int progress = 0;
@@ -220,5 +225,11 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         return saveWithoutMetadata(registries);
+    }
+
+    public static IItemHandler getSidedItemCapability(CrystallizerBlockEntity crystallizerBlockEntity, @Nullable Direction direction) {
+        if (direction == null) return crystallizerBlockEntity.itemHandler.get();
+        if (direction == Direction.DOWN) return crystallizerBlockEntity.outputHandler.get();
+        return crystallizerBlockEntity.inputHandler.get();
     }
 }

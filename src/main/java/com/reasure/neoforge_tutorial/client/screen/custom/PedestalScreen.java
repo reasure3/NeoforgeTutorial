@@ -2,7 +2,7 @@ package com.reasure.neoforge_tutorial.client.screen.custom;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
-import com.reasure.neoforge_tutorial.block.entity.menu.custom.PedestalMenu;
+import com.reasure.neoforge_tutorial.inventory.menu.custom.PedestalMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;

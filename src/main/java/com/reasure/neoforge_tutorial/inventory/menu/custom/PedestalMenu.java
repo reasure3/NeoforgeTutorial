@@ -1,8 +1,8 @@
-package com.reasure.neoforge_tutorial.block.entity.menu.custom;
+package com.reasure.neoforge_tutorial.inventory.menu.custom;
 
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.block.entity.custom.PedestalBlockEntity;
-import com.reasure.neoforge_tutorial.block.entity.menu.ModMenuTypes;
+import com.reasure.neoforge_tutorial.inventory.menu.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;

@@ -1,8 +1,8 @@
-package com.reasure.neoforge_tutorial.block.entity.menu.custom;
+package com.reasure.neoforge_tutorial.inventory.menu.custom;
 
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.block.entity.custom.CrystallizerBlockEntity;
-import com.reasure.neoforge_tutorial.block.entity.menu.ModMenuTypes;
+import com.reasure.neoforge_tutorial.inventory.menu.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -36,8 +36,8 @@ public class CrystallizerMenu extends AbstractContainerMenu {
 
         addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 8, 62)); // fluid
         addSlot(new SlotItemHandler(this.blockEntity.inventory, 1, 54, 34)); // input
-        addSlot(new SlotItemHandler(this.blockEntity.inventory, 2, 104, 34)); // output
-        addSlot(new SlotItemHandler(this.blockEntity.inventory, 3, 152, 62)); // energy
+        addSlot(new SlotItemHandler(this.blockEntity.inventory, 2, 152, 62)); // energy
+        addSlot(new SlotItemHandler(this.blockEntity.inventory, 3, 104, 34)); // output
 
         addPlayerInventory(inv, 8, 84);
         addPlayerHotbar(inv, 8, 142);
