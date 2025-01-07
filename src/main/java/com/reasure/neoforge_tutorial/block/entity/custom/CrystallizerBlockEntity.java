@@ -29,7 +29,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
@@ -59,6 +61,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
             };
         }
     };
+    public final Lazy<IItemHandler> itemHandler = Lazy.of(() -> inventory);
 
     private static final int FLUID_ITEM_SLOT = 0;
     private static final int INPUT_SLOT = 1;
