@@ -8,6 +8,7 @@ import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableAnimated;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.gui.placement.HorizontalAlignment;
 import mezz.jei.api.gui.placement.VerticalAlignment;
 import mezz.jei.api.gui.widgets.IRecipeExtrasBuilder;
@@ -16,6 +17,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -61,11 +63,6 @@ public class CrystallizerRecipeCategory implements IRecipeCategory<Crystallizing
     }
 
     @Override
-    public @Nullable IDrawable getBackground() {
-        return background;
-    }
-
-    @Override
     public int getWidth() {
         return 162;
     }
@@ -104,5 +101,10 @@ public class CrystallizerRecipeCategory implements IRecipeCategory<Crystallizing
                     .setTextAlignment(VerticalAlignment.BOTTOM)
                     .setColor(0xFF808080);
         }
+    }
+
+    @Override
+    public void draw(CrystallizingRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+        background.draw(guiGraphics);
     }
 }

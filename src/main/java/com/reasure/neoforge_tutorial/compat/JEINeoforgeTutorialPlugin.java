@@ -3,14 +3,13 @@ package com.reasure.neoforge_tutorial.compat;
 import com.reasure.neoforge_tutorial.NeoforgeTutorial;
 import com.reasure.neoforge_tutorial.block.ModBlocks;
 import com.reasure.neoforge_tutorial.client.screen.custom.CrystallizerScreen;
+import com.reasure.neoforge_tutorial.inventory.menu.ModMenuTypes;
+import com.reasure.neoforge_tutorial.inventory.menu.custom.CrystallizerMenu;
 import com.reasure.neoforge_tutorial.recipe.CrystallizingRecipe;
 import com.reasure.neoforge_tutorial.recipe.ModRecipes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.registration.IGuiHandlerRegistration;
-import mezz.jei.api.registration.IRecipeCatalystRegistration;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -48,5 +47,16 @@ public class JEINeoforgeTutorialPlugin implements IModPlugin {
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(CrystallizerScreen.class, 70, 30, 25, 20, CrystallizerRecipeCategory.CRYSTALLIZING_RECIPE_RECIPE_TYPE);
+    }
+
+    @Override
+    public void registerAdvanced(IAdvancedRegistration registration) {
+        IModPlugin.super.registerAdvanced(registration);
+    }
+
+    @Override
+    public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+        registration.addRecipeTransferHandler(CrystallizerMenu.class, ModMenuTypes.CRYSTALLIZER_MENU.get(),
+                CrystallizerRecipeCategory.CRYSTALLIZING_RECIPE_RECIPE_TYPE, 1, 1, 4, 36);
     }
 }
